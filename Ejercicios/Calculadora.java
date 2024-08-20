@@ -1,8 +1,8 @@
 import java.util.*;
 /*Este programa usará las condicionales if-else, for, switch y while*/
 public class Calculadora{
-    /*Este diseño con for y if-else ayudará a famializar su uso, se que puedo no
-     ser lo más efectivo pero deseas reforzar el conocimiento de for e if-else 
+    /*Este diseño con for y if-else ayudará a famializar su uso, se que puede no
+     ser lo más efectivo pero si deseas reforzar el conocimiento de for e if-else 
      puede ser significativo*/
     public static void main(String []args){
         System.out.println("Selecciona la operación a realizar: \n1. Suma \n2. Resta \n3. Multplicación \n4. División");
