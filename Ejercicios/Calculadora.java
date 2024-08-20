@@ -33,8 +33,14 @@ public class Calculadora{
                 }else if(resp.equalsIgnoreCase("N")){
                     System.out.println("¿Desea cambiar operación? \nS = Si \nN = No");
                     String cambio = leer.nextLine();
-                }else{
-                    System.out.println("Dato ingresado no válido,p or favor ingrese 'S' para Sí o 'N' para No.");
+                    if (cambio.equalsIgnoreCase("S")) {
+                        System.out.println("Selecciona la operación a realizar: \n1. Suma \n2. Resta \n3. Multplicación \n4. División");
+                        int cambioperacion = leer.nextInt();
+                    }else if(cambio.equalsIgnoreCase("N")){
+                        System.out.println("Cerrando programa");
+                    }
+            }else{
+                    System.out.println("Dato ingresado no válido,por favor ingrese 'S' para Sí o 'N' para No.");
                 }
         }
     }    
