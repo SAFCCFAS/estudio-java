@@ -11,6 +11,7 @@ public class Calculadora{
         leer.nextLine();
         String nombreOperacion = "";
         for (int i=0;i<1;i++){
+
             if(operacion == 1){
                 nombreOperacion = "Suma";
             }else if(operacion == 2 ){
@@ -49,6 +50,31 @@ public class Calculadora{
                     int num2=leer.nextInt();
                     int result=num1+num2;
                     System.out.println("El resultado de la "+nombreOperacion+" es "+result);
+                }else if(operacion==2){
+                    System.out.println("Por favor, ingrese primer número:");
+                    int num1=leer.nextInt();
+                    System.out.println("Por favor, ingrese segundo número:");
+                    int num2=leer.nextInt();
+                    int result=num1-num2;
+                    System.out.println("El resultado de la "+nombreOperacion+" es "+result);
+                }else if(operacion==3){
+                    System.out.println("Por favor, ingrese primer número:");
+                    int num1=leer.nextInt();
+                    System.out.println("Por favor, ingrese segundo número:");
+                    int num2=leer.nextInt();
+                    int result=num1*num2;
+                    System.out.println("El resultado de la "+nombreOperacion+" es "+result);
+                }else if(operacion==4){
+                    System.out.println("Por favor, ingrese primer número:");
+                    int num1=leer.nextInt();
+                    System.out.println("Por favor, ingrese segundo número:");
+                    int num2=leer.nextInt();
+                    if(num2!=0){
+                        int result=num1/num2;
+                        System.out.println("El resultado de la "+nombreOperacion+" es "+result);                 
+                    }else{
+                        System.out.println("Error: " +nombreOperacion+ " por cero no permitida.");
+                    }
                 }
             }
         }
