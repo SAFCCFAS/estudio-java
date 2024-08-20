@@ -10,38 +10,48 @@ public class Calculadora{
         int operacion = leer.nextInt();
         leer.nextLine();
         String nombreOperacion = "";
-        
-        if(operacion == 1){
-            nombreOperacion = "Suma";
-        }else if(operacion == 2 ){
-            nombreOperacion ="Resta";
-        }else if(operacion == 3){
-            nombreOperacion ="Multiplicación";
-        }else if(operacion == 4){
-            nombreOperacion ="División";
-        }
-        if (operacion>=1 && operacion<=4){
-            System.out.println("Usted a seleccionado "+nombreOperacion);      
-        }else{
-            System.out.println("Opción no válida. \nFavor ingresar las opciones indicadas (1-4)");
-        }
-        if(operacion>=1 && operacion<=4){
-                System.out.println("¿Desea continuar con la operación "+nombreOperacion+"? \nS = Si \nN = No");
-                String resp = leer.nextLine();
-                if(resp.equalsIgnoreCase("S")){
-                    System.out.println("Confimado, seguir las instrucciones");
-                }else if(resp.equalsIgnoreCase("N")){
-                    System.out.println("¿Desea cambiar operación? \nS = Si \nN = No");
-                    String cambio = leer.nextLine();
-                    if (cambio.equalsIgnoreCase("S")) {
-                        System.out.println("Selecciona la operación a realizar: \n1. Suma \n2. Resta \n3. Multplicación \n4. División");
-                        int cambioperacion = leer.nextInt();
-                    }else if(cambio.equalsIgnoreCase("N")){
-                        System.out.println("Cerrando programa");
-                    }
+        for (int i=0;i<1;i++){
+            if(operacion == 1){
+                nombreOperacion = "Suma";
+            }else if(operacion == 2 ){
+                nombreOperacion ="Resta";
+            }else if(operacion == 3){
+                nombreOperacion ="Multiplicación";
+            }else if(operacion == 4){
+                nombreOperacion ="División";
+            }
+            if (operacion>=1 && operacion<=4){
+                System.out.println("Usted a seleccionado "+nombreOperacion);      
             }else{
-                    System.out.println("Dato ingresado no válido,por favor ingrese 'S' para Sí o 'N' para No.");
+                System.out.println("Opción no válida. \nFavor ingresar las opciones indicadas (1-4)");
+            }
+            if(operacion>=1 && operacion<=4){
+                    System.out.println("¿Desea continuar con la operación "+nombreOperacion+"? \nS = Si \nN = No");
+                    String resp = leer.nextLine();
+                    if(resp.equalsIgnoreCase("S")){
+                        System.out.println("Confimado, seguir las instrucciones");
+                    }else if(resp.equalsIgnoreCase("N")){
+                        System.out.println("¿Desea cambiar operación? \nS = Si \nN = No");
+                        String cambio = leer.nextLine();
+                        if (cambio.equalsIgnoreCase("S")) {
+                            System.out.println("Selecciona la operación a realizar: \n1. Suma \n2. Resta \n3. Multplicación \n4. División");
+                            operacion = leer.nextInt();
+                        }else if(cambio.equalsIgnoreCase("N")){
+                            System.out.println("Cerrando programa");
+                        }else{
+                        System.out.println("Dato ingresado no válido,por favor ingrese 'S' para Sí o 'N' para No.");
+                    }
                 }
+                if(operacion==1){
+                    System.out.println("Por favor, ingrese primer número:");
+                    int num1=leer.nextInt();
+                    System.out.println("Por favor, ingrese segundo número:");
+                    int num2=leer.nextInt();
+                    int result=num1+num2;
+                    System.out.println("El resultado de la "+nombreOperacion+" es "+result);
+                }
+            }
         }
-    }    
+        
+    }  
 }
