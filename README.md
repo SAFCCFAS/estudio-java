@@ -21,7 +21,8 @@ Si quieres revisar o ejecutar los ejercicios, sigue estos pasos:
 
 Clona el repositorio:
 
-git clone https://github.com/tu-usuario/nombre-del-repositorio.git
+git clone https://github.com/SAFCCFAS/estudio-java.git
+gh repo clone SAFCCFAS/estudio-java
 Abre los archivos .java en tu editor de código preferido.
 
 Ejecuta los ejercicios utilizando el entorno de desarrollo que prefieras (Eclipse, IntelliJ, etc.) o directamente desde la línea de comandos usando javac y java.
