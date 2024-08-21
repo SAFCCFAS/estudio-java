@@ -10,7 +10,7 @@ public class Calculadora{
         int operacion = leer.nextInt();
         leer.nextLine();
         String nombreOperacion = "";
-        
+        String otraOperacion = "";
 
             if(operacion == 1){
                 nombreOperacion = "Suma";
@@ -27,6 +27,7 @@ public class Calculadora{
             }else{
                 System.out.println("Opción no válida. \nFavor ingresar las opciones indicadas (1-4)");
             }
+
             if(operacion>=1 && operacion<=4){
                     System.out.println("¿Desea continuar con la operación "+nombreOperacion+"? \nS = Si \nN = No");
                     String resp = leer.nextLine();
@@ -37,47 +38,22 @@ public class Calculadora{
                         String cambio = leer.nextLine();
                         if (cambio.equalsIgnoreCase("S")) {
                             System.out.println("Selecciona la operación a realizar: \n1. Suma \n2. Resta \n3. Multplicación \n4. División");
-                            operacion = leer.nextInt();
+                            int otraoperacion=leer.nextInt();
+                            if(otraoperacion==1){
+                                otraOperacion = "Suma";
+                            }else if(otraoperacion == 2 ){
+                                otraOperacion ="Resta";
+                            }else if(otraoperacion == 3){
+                                otraOperacion ="Multiplicación";
+                            }else if(otraoperacion == 4){
+                                otraOperacion ="División";
+                            }
+                            System.out.println("Usted ha seleccionado "+otraOperacion);
                         }else if(cambio.equalsIgnoreCase("N")){
                             System.out.println("Cerrando programa");
                         }else{
                         System.out.println("Dato ingresado no válido,por favor ingrese 'S' para Sí o 'N' para No.");
                     }
-                }
-                for(int i=0;i<1;i++){
-                if(operacion==1){
-                    System.out.println("Por favor, ingrese primer número:");
-                    int num1=leer.nextInt();
-                    System.out.println("Por favor, ingrese segundo número:");
-                    int num2=leer.nextInt();
-                    int result=num1+num2;
-                    System.out.println("El resultado de la "+nombreOperacion+" es "+result);
-                }else if(operacion==2){
-                    System.out.println("Por favor, ingrese primer número:");
-                    int num1=leer.nextInt();
-                    System.out.println("Por favor, ingrese segundo número:");
-                    int num2=leer.nextInt();
-                    int result=num1-num2;
-                    System.out.println("El resultado de la "+nombreOperacion+" es "+result);
-                }else if(operacion==3){
-                    System.out.println("Por favor, ingrese primer número:");
-                    int num1=leer.nextInt();
-                    System.out.println("Por favor, ingrese segundo número:");
-                    int num2=leer.nextInt();
-                    int result=num1*num2;
-                    System.out.println("El resultado de la "+nombreOperacion+" es "+result);
-                }else if(operacion==4){
-                    System.out.println("Por favor, ingrese primer número:");
-                    int num1=leer.nextInt();
-                    System.out.println("Por favor, ingrese segundo número:");
-                    int num2=leer.nextInt();
-                    if(num2!=0){
-                        int result=num1/num2;
-                        System.out.println("El resultado de la "+nombreOperacion+" es "+result);                 
-                    }else{
-                        System.out.println("Error: " +nombreOperacion+ " por cero no permitida.");
-                    }
-                }
             }
         }
     }  
