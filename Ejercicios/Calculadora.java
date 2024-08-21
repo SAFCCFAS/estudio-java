@@ -10,7 +10,7 @@ public class Calculadora{
         int operacion = leer.nextInt();
         leer.nextLine();
         String nombreOperacion = "";
-        for (int i=0;i<1;i++){
+        
 
             if(operacion == 1){
                 nombreOperacion = "Suma";
@@ -21,6 +21,10 @@ public class Calculadora{
             }else if(operacion == 4){
                 nombreOperacion ="División";
             }
+            if(operacion!=1 && operacion!=4){
+                System.out.println("Solo numeros");      
+            }
+
             if (operacion>=1 && operacion<=4){
                 System.out.println("Usted a seleccionado "+nombreOperacion);      
             }else{
@@ -77,7 +81,6 @@ public class Calculadora{
                     }
                 }
             }
-        }
         
     }  
 }
