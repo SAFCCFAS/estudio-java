@@ -21,9 +21,6 @@ public class Calculadora{
             }else if(operacion == 4){
                 nombreOperacion ="División";
             }
-            if(operacion!=1 && operacion!=4){
-                System.out.println("Solo numeros");      
-            }
 
             if (operacion>=1 && operacion<=4){
                 System.out.println("Usted a seleccionado "+nombreOperacion);      
@@ -47,6 +44,7 @@ public class Calculadora{
                         System.out.println("Dato ingresado no válido,por favor ingrese 'S' para Sí o 'N' para No.");
                     }
                 }
+                for(int i=0;i<1;i++){
                 if(operacion==1){
                     System.out.println("Por favor, ingrese primer número:");
                     int num1=leer.nextInt();
@@ -81,6 +79,6 @@ public class Calculadora{
                     }
                 }
             }
-        
+        }
     }  
 }
