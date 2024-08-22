@@ -1,25 +1,38 @@
 import java.util.*;
-/*Este programa usará las condicionales if-else, for*/
+/*Este programa usará las condicionales if-else, for, switch, do-while/while*/
 public class Calculadora{
     /*Este diseño con for y if-else ayudará a famializar su uso, se que puede no
      ser lo más efectivo pero si deseas reforzar el conocimiento de for e if-else 
      puede ser significativo*/
-    static Scanner entrada=new Scanner(System.in);
+    /* Para entrar en contexto:
+   - if (sí en español): analiza si se cumple una condición. Si es verdadera, ejecuta el código que sigue.
+   - else if (entonces sí): se usa para verificar otra condición si la primera no se cumplió.
+   - else (sino): se ejecuta cuando ninguna de las condiciones anteriores se cumple. */
+    /*static se relaciona al término que algo se puede usar dentro de la clase
+    sin necesidad de ser usado en cada objeto que se declare.*/
+    static Scanner entrada=new Scanner(System.in); 
+    static int num1,num2,result;
+    /* Teniendo en cuenta lo anterior, se usa 'static' para evitar declarar 
+   las variables cada vez que se necesiten. Al declararlas como 'static', 
+   se vuelven globales dentro de la clase, lo que simplifica su uso. 
+   Por ejemplo, en lugar de declarar 'int num1, num2, result' cada vez, 
+   podemos simplemente usar 'num1 = ...' porque ya fueron declaradas antes 
+   como 'static'. */
     public static void main(String []args){
-        System.out.println("Esccoger la calculadora a usar \n1 para for/if-else \n2 switch");
+        System.out.println("Esccoger la calculadora a usar \n1 Calculadora con for/if-else \n2 Calculadora con switch");
         String opc = entrada.nextLine();
         int opc1 =Integer.parseInt(opc);
 
         switch(opc1){
-            case 1 -> menu(); //switch
+            case 1 -> calculadora();
             case 2 ->{  
                 calculadoraI otra = new calculadoraI();
                 otra.segunda();
             }
-            case 3-> calculadora();
+            //case 3-> menu(); 
         }System.exit(opc1);
     }
-    static void menu(){ 
+    /*static void menu(){ 
             int ope;
         do{
             System.out.println("Selecciona la operación a realizar: \n1. Suma. \n2. Resta. \n3. Multplicación. \n4. División.");
@@ -53,7 +66,7 @@ public class Calculadora{
         System.out.println("Por favor ingrese un número");
         int num1 =entrada.nextInt();
         return num1;
-    }
+    }*/
     
    static void calculadora(){
     System.out.println("Selecciona la operación a realizar: \n1. Suma. \n2. Resta. \n3. Multplicación. \n4. División.");
@@ -61,13 +74,13 @@ public class Calculadora{
         String nameop= "";
         String otraOperacion ="";
         
-        if(operacion.matches("-?\\d+")) { //Aqui se realiza la validación inicial de ingreso
-            int operacion1 = Integer.parseInt(operacion); //para admitir ingresos de enteros
-            if (operacion1 == 1) {
-                 nameop = "Suma";
+        if(operacion.matches("-?\\d+")) { //Aqui se realiza la validación inicial de ingreso si cumple con lo solicitado
+            int operacion1 = Integer.parseInt(operacion); //en este punto se ha realizado la validación y se indica que se requiere
+            if (operacion1 == 1) {  //aqui se analiza si se cumple la condición anterior de solicitud en este caso si el ingreso 1
+                 nameop = "Suma";   //aqui si se cumple la condición que realizará o mostraré en tal caso
                  System.out.println("Usted ha selecionado "+nameop+".");
-            } else if (operacion1 == 2) {
-                 nameop = "Resta";
+            } else if (operacion1 == 2) { // de lo contrario sino se cumple la condición...
+                 nameop = "Resta";        // que realizará o mostrará
                  System.out.println("Usted ha selecionado "+nameop+".");
             } else if (operacion1 == 3) {
                  nameop = "Multiplicación";
@@ -87,10 +100,10 @@ public class Calculadora{
                 System.out.println("Confirmado, seguir las instrucciones");
                     if(operacion1==1){
                         System.out.println("Favor ingresar primer número:");
-                        int num1=entrada.nextInt();
+                        num1=entrada.nextInt();
                         System.out.println("Favor ingresar segundo número:");
-                        int num2=entrada.nextInt();
-                        int result=num1+num2;
+                        num2=entrada.nextInt();
+                        result=num1+num2;
                         System.out.println("El resultado de la "+nameop+" es "+result);
                     }else if(operacion1==2){
                         System.out.println("Favor ingresar primer número:");
@@ -149,24 +162,24 @@ public class Calculadora{
                         }
                         if(operacion1==1){
                             System.out.println("Favor ingresar primer número:");
-                            int num1=entrada.nextInt();
+                            num1=entrada.nextInt();
                             System.out.println("Favor ingresar segundo número:");
-                            int num2=entrada.nextInt();
-                            int result=num1+num2;
+                            num2=entrada.nextInt();
+                            result=num1+num2;
                             System.out.println("El resultado de la "+nameop+" es "+result);
                         }else if(operacion1==2){
                             System.out.println("Favor ingresar primer número:");
-                            int num1=entrada.nextInt();
+                            num1=entrada.nextInt();
                             System.out.println("Favor ingresar segundo número:");
-                            int num2=entrada.nextInt();
-                            int result=num1-num2;
+                            num2=entrada.nextInt();
+                            result=num1-num2;
                             System.out.println("El resultado de la "+nameop+" es "+result);
                         }else if(operacion1==3){
                             System.out.println("Favor ingresar primer número:");
-                            int num1=entrada.nextInt();
+                            num1=entrada.nextInt();
                             System.out.println("Favor ingresar segundo número:");
-                            int num2=entrada.nextInt();
-                            int result=num1*num2;
+                            num2=entrada.nextInt();
+                            result=num1*num2;
                             System.out.println("El resultado de la "+nameop+" es "+result);
                         }else if(operacion1==4){
                             System.out.println("Favor ingresar primer número:");
@@ -204,6 +217,7 @@ public class Calculadora{
 }
 class calculadoraI{
     void segunda(){
-        System.out.println("n");
+        System.out.println("Selecciona la operación a realizar: \n1. Suma.\n2. Resta.\n3. Multplicación.\n4. División.");
+        
     }
 }
