@@ -37,8 +37,9 @@ public class Calculadora{
                         break;
                     }
                 }else{
+                    System.out.println("Ingreso no válido, intente nuevamente.");
                     System.out.println("Opciones válidas del 1 al 5");
-                    System.out.println("Opción ingresada no válida, intente de nuevo.");
+                    menu();
                 }
                 
     }
@@ -79,7 +80,7 @@ public class Calculadora{
                         System.exit(4);
                     }
                 }else{
-                    System.out.println("Solo se admiten números, intente nuevamente.");
+                    System.out.println("Ingreso no válido, intente nuevamente.");
                     System.out.println("Opciones válidas del 1 al 4");
                     primera();
                 }
@@ -121,11 +122,14 @@ public class Calculadora{
                     System.out.println("El resultado de la " + operaciones + " es: " + result);
                 } else {
                     System.out.println("Error: División por cero no permitida.");
-                }   
+                }
+                }else{
+                    System.out.println("Ingreso no válido, intente nuevamente.");
+                    System.out.println("Opciones válidas del 1 al 6");
             }
         }
         } else {
-            System.out.println("Solo se admiten números, intente nuevamente.");
+            System.out.println("Ingreso no válido, intente nuevamente.");
             System.out.println("Opciones válidas del 1 al 6");
             primera();
         }
