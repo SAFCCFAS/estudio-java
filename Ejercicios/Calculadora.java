@@ -133,10 +133,13 @@ public class Calculadora{
             System.out.println("Opciones válidas del 1 al 6");
             primera();
         }
-        }
-        
+    }
     }
     static void calculadora2(){
-        System.out.println("Test");
+        System.out.println("Por favor Seleccione la operación a realizar:");
+            System.out.println("1-Suma.\n2-Resta\n3-Multiplicación\n4-División"); 
+            System.out.println("5-Regresar al menú\n6-Salir del programa.");
+            String operaciones = entrada.nextLine();
+        
     }
 }
