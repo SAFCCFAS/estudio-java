@@ -36,7 +36,7 @@ public class Calculadora{
                     System.out.println("Opción ingresada no válida, intente de nuevo.");
                 }
     }
-    int num1,num2,result;
+    static int num1, num2, result;
     static void calculadora1(){
         System.out.println("Por favor Seleccione la operación a realizar:");
         System.out.println("1-Suma.\n2-Resta\n3-Multiplicación\n4-División"); 
@@ -63,8 +63,12 @@ public class Calculadora{
                         System.out.println("Confirmado, seguir las instrucciones");
                     }else if (cambio1==2) {
                         calculadora1();
+                        System.exit(2);
                     }else if (cambio1==3) {
                         menu();
+                    }else if (cambio1==4){
+                        System.out.println("Cerrando programa.");
+                        System.exit(4);
                     }
                 }else{
                     System.out.println("Solo se admiten números, intente nuevamente.");
@@ -76,6 +80,41 @@ public class Calculadora{
             }else if (operaciones1==6) {
                 System.out.println("Cerrando programa");
                 System.exit(6);
+            }
+            for(int x=0;x<1;x++){
+                if(operaciones1==1){
+                    System.out.println("ingrese primer número:");
+                    num1=entrada.nextInt();
+                    System.out.println("Ingrese segundo número:");
+                    num2=entrada.nextInt();
+                    result=num1+num2;
+                    System.out.println("El resultado de la "+operaciones+" es: "+result);
+                }else if(operaciones1==2){
+                    System.out.println("ingrese primer número:");
+                    num1=entrada.nextInt();
+                    System.out.println("Ingrese segundo número:");
+                    num2=entrada.nextInt();
+                    result=num1-num2;
+                    System.out.println("El resultado de la "+operaciones+" es: "+result);
+                }else if(operaciones1==3){
+                    System.out.println("ingrese primer número:");
+                    num1=entrada.nextInt();
+                    System.out.println("Ingrese segundo número:");
+                    num2=entrada.nextInt();
+                    result=num1*num2;
+                    System.out.println("El resultado de la "+operaciones+" es: "+result);
+                }else if (operaciones1==4) {
+                    System.out.println("Ingrese primer número");
+                    double num1=entrada.nextDouble();
+                    System.out.println("Ingrese segundo número:");
+                    double num2=entrada.nextDouble();
+                    if (num2 != 0) {
+                    double result = num1 / num2;
+                    System.out.println("El resultado de la " + operaciones + " es: " + result);
+                } else {
+                    System.out.println("Error: División por cero no permitida.");
+                }   
+                }
             }
         } else {
             System.out.println("Solo se admiten números, intente nuevamente.");
