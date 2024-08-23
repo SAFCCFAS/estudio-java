@@ -9,19 +9,24 @@ public class Calculadora{
         public static void main(String args[]){
             menu();
     }
+    
     static void menu(){
         System.out.println("\nSelecione calculadora a ejecutar:");
             System.out.println("\n1-Calculadora(for/if-else)\n2-Calculadora(switch)");
             System.out.println("3-Calculadora(while)\n4.Calculadora(do-while)");
             System.out.println("5-Salir del programa");
             String eleccion = entrada.nextLine();
-
             
                 if(eleccion.matches("-?\\d+")){
                     int eleccion1 = Integer.parseInt(eleccion);
                     switch (eleccion1) {
-                        case 1:
-                            calculadora1();
+                        case 1:{
+                            CalculadoraI one = new CalculadoraI();
+                            one.primera();
+                        }
+                            break;
+                        case 2:
+                            calculadora2();
                             break;
                         case 5:
                             System.out.println("Cerrando programa.");
@@ -35,13 +40,16 @@ public class Calculadora{
                     System.out.println("Opciones válidas del 1 al 5");
                     System.out.println("Opción ingresada no válida, intente de nuevo.");
                 }
+                
     }
     static int num1, num2, result;
-    static void calculadora1(){
-        System.out.println("Por favor Seleccione la operación a realizar:");
-        System.out.println("1-Suma.\n2-Resta\n3-Multiplicación\n4-División"); 
-        System.out.println("5-Regresar al menú\n6-Salir del programa.");
-        String operaciones = entrada.nextLine();
+    static class CalculadoraI{
+        void primera(){
+            System.out.println("Por favor Seleccione la operación a realizar:");
+            System.out.println("1-Suma.\n2-Resta\n3-Multiplicación\n4-División"); 
+            System.out.println("5-Regresar al menú\n6-Salir del programa.");
+            String operaciones = entrada.nextLine();
+
         if (operaciones.matches("-?\\d+")) {
             int operaciones1 = Integer.parseInt(operaciones);
             if(operaciones1==1){
@@ -59,12 +67,12 @@ public class Calculadora{
                 String cambio=entrada.nextLine();
                 if (cambio.matches("-?\\d+")) {
                     int cambio1=Integer.parseInt(cambio);
-                    if (cambio1==1) {
+                    if (cambio1==1){
                         System.out.println("Confirmado, seguir las instrucciones");
-                    }else if (cambio1==2) {
-                        calculadora1();
+                    }else if (cambio1==2){
+                        primera();
                         System.exit(2);
-                    }else if (cambio1==3) {
+                    }else if (cambio1==3){
                         menu();
                     }else if (cambio1==4){
                         System.out.println("Cerrando programa.");
@@ -73,10 +81,10 @@ public class Calculadora{
                 }else{
                     System.out.println("Solo se admiten números, intente nuevamente.");
                     System.out.println("Opciones válidas del 1 al 4");
-                    calculadora1();
+                    primera();
                 }
             }else if(operaciones1==5) {
-                    calculadora1();
+                    primera();
             }else if (operaciones1==6) {
                 System.out.println("Cerrando programa");
                 System.exit(6);
@@ -114,12 +122,17 @@ public class Calculadora{
                 } else {
                     System.out.println("Error: División por cero no permitida.");
                 }   
-                }
             }
+        }
         } else {
             System.out.println("Solo se admiten números, intente nuevamente.");
             System.out.println("Opciones válidas del 1 al 6");
-            calculadora1();
+            primera();
         }
+        }
+        
+    }
+    static void calculadora2(){
+        System.out.println("Test");
     }
 }
