@@ -151,13 +151,35 @@ public class Calculadora{
                 Integer operaciones1 = Integer.parseInt(operaciones);
                 if (operaciones1==1) {
                     operaciones="Suma";
+                }else if (operaciones1==2) {
+                    operaciones="Resta";
+                }else if (operaciones1==3) {
+                    operaciones="Multiplicación";
+                }else if (operaciones1==4) {
+                    operaciones="División";
                 }
                 switch (operaciones1) {
                     case 1:
                         System.out.println("Usted a seleccionado "+operaciones+".");
                         break;
+                    case 2:
+                        System.out.println("Usted a seleccionado "+operaciones+".");
+                        break;
+                    case 3:
+                        System.out.println("Usted a seleccionado "+operaciones+".");
+                        break;
+                    case 4:
+                        System.out.println("Usted a seleccionado "+operaciones+".");
+                        break;
+                    case 5:
+                        menu();
+                        break;
+                    case 6:
+                        System.out.println("Cerrando programa.");
+                        break;
                     default:
-                        throw new AssertionError();
+                        System.out.println("Ingreso no válido, intente nuevamente.");
+                        calculadora2();
                 }
             } catch(NumberFormatException ex) {
                 System.err.println("No se admiten valores no numéricos");
