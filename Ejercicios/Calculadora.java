@@ -141,11 +141,13 @@ public class Calculadora{
         }
     }
     }
+    
     static void calculadora2(){
         System.out.println("Por favor Seleccione la operación a realizar:");
             System.out.println("1-Suma.\n2-Resta\n3-Multiplicación\n4-División"); 
             System.out.println("5-Regresar al menú\n6-Salir del programa.");
             String operaciones = entrada.nextLine();
+            String cambio ="";
 
             try {
                 Integer operaciones1 = Integer.parseInt(operaciones);
@@ -161,6 +163,9 @@ public class Calculadora{
                 switch (operaciones1) {
                     case 1:
                         System.out.println("Usted a seleccionado "+operaciones+".");
+                        
+                        System.out.println("¿Desea continuar con "+operaciones+"?");
+                        cambio=entrada.nextLine();
                         break;
                     case 2:
                         System.out.println("Usted a seleccionado "+operaciones+".");
