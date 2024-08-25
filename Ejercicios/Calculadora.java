@@ -29,7 +29,7 @@ public class Calculadora {
                 default -> System.err.println("¡ERROR!\nIngreso no válido intente nuevamente");
             }
         } catch (NumberFormatException e) {
-            System.err.println("¡ERROR!\nIngreso no válido intente nuevamente");
+            System.err.println("¡ERROR!\nSolo se admiten números, intente nuevamente");
             menu();
         }
     }
@@ -146,7 +146,7 @@ public class Calculadora {
                         menu();
                         break;
                     default:
-                        System.err.println("¡ERROR!\nIngreso no válido intente nuevamente");
+                        System.err.println("¡ERROR!\nOpción ingresada no válida intente nuevamente");
                         segunda();
                 }
             } catch (NumberFormatException e) {
