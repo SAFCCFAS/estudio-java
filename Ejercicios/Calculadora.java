@@ -26,10 +26,11 @@ public class Calculadora {
                 }
                 case 3 ->
                     System.out.println("Cerrando programa.");
-                default -> System.err.println("¡ERROR!\nIngreso no válido intente nuevamente");
+                default -> System.err.println("¡ERROR!\nIngreso no válido intente nuevamente.\nOpciones válidas 1 al 3.");
             }
         } catch (NumberFormatException e) {
-            System.err.println("¡ERROR!\nSolo se admiten números, intente nuevamente");
+            System.err.println("¡ERROR!\nIngreso no válido intente nuevamente.");
+            System.err.println("Ingresos válidos números 1 al 3.");
             menu();
         }
     }
@@ -61,7 +62,8 @@ public class Calculadora {
                     primera();
                 }
             } catch (NumberFormatException e) {
-                System.err.println("¡ERROR!\nIngreso no válido intente nuevamente");
+                System.err.println("¡ERROR!\nIngreso no válido intente nuevamente.");
+                System.err.println("Ingresos válidos números 1 al 5.");
                 primera();
             }
             for(x=0;x<1;x++){
@@ -69,6 +71,11 @@ public class Calculadora {
                 opcion=entrada.nextLine();
                 if(opcion.trim().isEmpty()||opcion.equalsIgnoreCase("S")){
                     System.out.println("Recibido, favor seguir las indicaciones.");
+                    try{
+                       operacionselecionada = Integer.parseInt(operaciones);
+                    }catch(NumberFormatException){
+
+                    }
                     if (operacionselecionada==1){
                         System.out.println("Ingrese primer número");
                         num1=entrada.nextInt();
@@ -109,9 +116,14 @@ public class Calculadora {
                 } else if (opcion.equalsIgnoreCase("N")) {
                         System.out.println("Cerrando programa.");
                         System.exit(0);
-                    }
+                }else{
+                    System.err.println("¡ERROR!\nIngreso no válido intente nuevamente");
+                    System.err.println("Opciones válidas S o N");
+                    primera();
+                }
                     } else{
                     System.err.println("¡ERROR!\nIngreso no válido intente nuevamente");
+                    System.err.println("Opciones válidas S o N");
                     primera();
                 }
             }
@@ -146,7 +158,7 @@ public class Calculadora {
                         menu();
                         break;
                     default:
-                        System.err.println("¡ERROR!\nOpción ingresada no válida intente nuevamente");
+                        System.err.println("¡ERROR!\nIngreso no válido intente nuevamente");
                         segunda();
                 }
             } catch (NumberFormatException e) {
