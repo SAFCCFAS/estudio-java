@@ -1,193 +1,158 @@
-
 import java.util.Scanner;
 
-public class Calculadora{
-    //Este programa se dividirá en varias calculadoras usando
-    //Bucles: for, while y do while.
-    //Condicionales: if-else, switch
-        static Scanner entrada = new Scanner(System.in);
-        public static void main(String args[]){
-            menu();
+public class Calculadora {
+    static Scanner entrada=new Scanner(System.in);
+    static int x,num1,num2,result,operacionselecionada;
+    static String operaciones,opcion;
+    public static void main(String[] args) {
+        menu();
     }
-    
     static void menu(){
-        System.out.println("\nSelecione calculadora a ejecutar:");
-            System.out.println("\n1-Calculadora(for/if-else)\n2-Calculadora(switch)");
-            System.out.println("3-Calculadora(while)\n4.Calculadora(do-while)");
-            System.out.println("5-Salir del programa");
-            String eleccion = entrada.nextLine();
-            
-                if(eleccion.matches("-?\\d+")){
-                    int eleccion1 = Integer.parseInt(eleccion);
-                    switch (eleccion1) {
-                        case 1:{
-                            CalculadoraI one = new CalculadoraI();
-                            one.primera();
-                        }
-                            break;
-                        case 2:
-                            calculadora2();
-                            break;
-                        case 5:
-                            System.out.println("Cerrando programa.");
-                            break;
-                        default:
-                        System.out.println("Opción no valida");
-                        System.out.println("Opciones válidas del 1 al 5");
-                        break;
-                    }
-                }else{
-                    System.out.println("Ingreso no válido, intente nuevamente.");
-                    System.out.println("Opciones válidas del 1 al 5");
-                    menu();
+        System.out.println("Elija la calculadora a usar: \n1-Calculadora for/if-else");
+        System.out.println("2-Calculadora if/switch\n3-Cerrar programa");
+        operaciones=entrada.nextLine();
+        try{
+            operacionselecionada= Integer.parseInt(operaciones);
+            switch (operacionselecionada) {
+                case 1 ->{
+                    CalculadoraI one = new CalculadoraI();
+                    one.primera();
+                    break;
                 }
-                
+                case 2 ->{
+                    CalculadoraII two = new CalculadoraII();
+                    two.segunda();
+                    break;
+                }
+                case 3 ->
+                    System.out.println("Cerrando programa.");
+                default -> System.err.println("¡ERROR!\nIngreso no válido intente nuevamente");
+            }
+        } catch (NumberFormatException e) {
+            System.err.println("¡ERROR!\nIngreso no válido intente nuevamente");
+            menu();
+        }
     }
-    static int num1, num2, result;
     static class CalculadoraI{
         void primera(){
-            System.out.println("Por favor Seleccione la operación a realizar:");
-            System.out.println("1-Suma.\n2-Resta\n3-Multiplicación\n4-División"); 
-            System.out.println("5-Regresar al menú\n6-Salir del programa.");
-            String operaciones = entrada.nextLine();
-
-        if (operaciones.matches("-?\\d+")) {
-            int operaciones1 = Integer.parseInt(operaciones);
-            if(operaciones1==1){
-                operaciones="Suma";
-            }else if(operaciones1==2){
-                operaciones="Resta";
-            }else if(operaciones1==3){
-                operaciones="Multiplicaciones";
-            }else if(operaciones1==4){
-                operaciones="División";
-            }else if(operaciones1==5){
-                menu();
-                System.gc();
-            }else if (operaciones1==6) {
-                System.out.println("Cerrando programa.");
-                System.exit(6);
-            }
-            if(operaciones1==1||operaciones1==2||operaciones1==3||operaciones1==4){
-                System.out.println("Usted a selecionado: "+operaciones+"\n¿Desea continuar con "+operaciones+"?");
-                System.out.println("1-Si\n2-Cambio operación\n3-Volver al menú\n4-Cerrar porgrama");
-                String cambio=entrada.nextLine();
-                if (cambio.matches("-?\\d+")) {
-                    int cambio1=Integer.parseInt(cambio);
-                    if (cambio1==1){
-                        System.out.println("Confirmado, seguir las instrucciones");
-                    }else if (cambio1==2){
-                        primera();
-                        System.exit(2);
-                    }else if (cambio1==3){
-                        menu();
-                    }else if (cambio1==4){
-                        System.out.println("Cerrando programa.");
-                        System.exit(4);
-                    }
-                }else{
-                    System.out.println("Ingreso no válido, intente nuevamente.");
-                    System.out.println("Opciones válidas del 1 al 4");
-                    primera();
-                }
-            }else if(operaciones1==5) {
-                    primera();
-            }else if (operaciones1==6) {
-                System.out.println("Cerrando programa");
-                System.exit(6);
-            }
-            for(int x=0;x<1;x++){
-                if(operaciones1==1){
-                    System.out.println("ingrese primer número:");
-                    num1=entrada.nextInt();
-                    System.out.println("Ingrese segundo número:");
-                    num2=entrada.nextInt();
-                    result=num1+num2;
-                    System.out.println("El resultado de la "+operaciones+" es: "+result);
-                }else if(operaciones1==2){
-                    System.out.println("ingrese primer número:");
-                    num1=entrada.nextInt();
-                    System.out.println("Ingrese segundo número:");
-                    num2=entrada.nextInt();
-                    result=num1-num2;
-                    System.out.println("El resultado de la "+operaciones+" es: "+result);
-                }else if(operaciones1==3){
-                    System.out.println("ingrese primer número:");
-                    num1=entrada.nextInt();
-                    System.out.println("Ingrese segundo número:");
-                    num2=entrada.nextInt();
-                    result=num1*num2;
-                    System.out.println("El resultado de la "+operaciones+" es: "+result);
-                }else if (operaciones1==4) {
-                    System.out.println("Ingrese primer número");
-                    double num1=entrada.nextDouble();
-                    System.out.println("Ingrese segundo número:");
-                    double num2=entrada.nextDouble();
-                    if (num2 != 0) {
-                    double result = num1 / num2;
-                    System.out.println("El resultado de la " + operaciones + " es: " + result);
-                } else {
-                    System.out.println("Error: División por cero no permitida.");
-                }
-                }else{
-                    System.out.println("Ingreso no válido, intente nuevamente.");
-                    System.out.println("Opciones válidas del 1 al 6");
-            }
-        }
-        } else {
-            System.out.println("Ingreso no válido, intente nuevamente.");
-            System.out.println("Opciones válidas del 1 al 6");
-            primera();
-        }
-    }
-    }
-    
-    static void calculadora2(){
-        System.out.println("Por favor Seleccione la operación a realizar:");
-            System.out.println("1-Suma.\n2-Resta\n3-Multiplicación\n4-División"); 
-            System.out.println("5-Regresar al menú\n6-Salir del programa.");
-            String operaciones = entrada.nextLine();
-            String cambio ="";
-
-            try {
-                Integer operaciones1 = Integer.parseInt(operaciones);
-                if (operaciones1==1) {
+            System.out.println("Favor elija la operación a realizar:\n1-Suma.\n2-Resta.\n3-Multiplicación.");
+            System.out.println("4-División.\n5-Regresar al menú.");
+            operaciones=entrada.nextLine();
+            try{
+                operacionselecionada = Integer.parseInt(operaciones);
+                if(operacionselecionada==1){
                     operaciones="Suma";
-                }else if (operaciones1==2) {
+                    System.out.println("Usted a elegido: "+operaciones+".");
+                }else if(operacionselecionada==2){
                     operaciones="Resta";
-                }else if (operaciones1==3) {
+                    System.out.println("Usted a elegido: "+operaciones+".");
+                }else if(operacionselecionada==3){
                     operaciones="Multiplicación";
-                }else if (operaciones1==4) {
+                    System.out.println("Usted a elegido: "+operaciones+".");
+                }else if(operacionselecionada==4){
                     operaciones="División";
+                    System.out.println("Usted a elegido: "+operaciones+".");
+                } else if (operacionselecionada==5) {
+                    System.out.println("Regresando al menú principal");
+                    menu();
+                    System.exit(5);
+                } else{
+                    System.err.println("¡ERROR!\nIngreso no válido intente nuevamente");
+                    primera();
                 }
-                switch (operaciones1) {
+            } catch (NumberFormatException e) {
+                System.err.println("¡ERROR!\nIngreso no válido intente nuevamente");
+                primera();
+            }
+            for(x=0;x<1;x++){
+                System.out.println("¿Desea continuar con la operación "+operaciones+"?\n[S/N]");
+                opcion=entrada.nextLine();
+                if(opcion.trim().isEmpty()||opcion.equalsIgnoreCase("S")){
+                    System.out.println("Recibido, favor seguir las indicaciones.");
+                    if (operacionselecionada==1){
+                        System.out.println("Ingrese primer número");
+                        num1=entrada.nextInt();
+                        System.out.println("Ingrese segundo número");
+                        num2=entrada.nextInt();
+                        result=num1+num2;
+                        System.out.println("El resultado de la "+operaciones+" es: "+result);
+                    }else if (operacionselecionada==2){
+                        System.out.println("Ingrese primer número");
+                        num1=entrada.nextInt();
+                        System.out.println("Ingrese segundo número");
+                        num2=entrada.nextInt();
+                        result=num1-num2;
+                        System.out.println("El resultado de la "+operaciones+" es: "+result);
+                    }else if (operacionselecionada==3){
+                        System.out.println("Ingrese primer número");
+                        num1=entrada.nextInt();
+                        System.out.println("Ingrese segundo número");
+                        num2=entrada.nextInt();
+                        result=num1*num2;
+                        System.out.println("El resultado de la "+operaciones+" es: "+result);
+                    }else if(operacionselecionada==4){
+                        System.out.println("Ingrese primer número");
+                        double num1=entrada.nextDouble();
+                        System.out.println("Ingrese primer número");
+                        double num2=entrada.nextDouble();
+                        double result=num1/num2;
+                        if(num2!=0){
+                            System.out.println("El resultado de la "+operaciones+" es: "+result);
+                        }
+                        System.err.println("¡ERROR!"+operaciones+"entre 0 no permitida.");
+                    }
+                }else if(opcion.equalsIgnoreCase("N")){
+                    System.out.println("¿Desea cambiar operación?\n[S/N]");
+                    opcion=entrada.nextLine();
+                    if(opcion.trim().isEmpty()||opcion.equalsIgnoreCase("S")){
+                        primera();
+                } else if (opcion.equalsIgnoreCase("N")) {
+                        System.out.println("Cerrando programa.");
+                        System.exit(0);
+                    }
+                    } else{
+                    System.err.println("¡ERROR!\nIngreso no válido intente nuevamente");
+                    primera();
+                }
+            }
+        }
+    }
+    static class CalculadoraII{
+        void segunda(){
+            System.out.println("Favor elija la operación a realizar:\n1-Suma.\n2-Resta.\n3-Multiplicación.");
+            System.out.println("4-División.\n5-Regresar al menú.");
+            operaciones=entrada.nextLine();
+            try{
+                operacionselecionada=Integer.parseInt(operaciones);
+                switch (operacionselecionada){
                     case 1:
-                        System.out.println("Usted a seleccionado "+operaciones+".");
-                        
-                        System.out.println("¿Desea continuar con "+operaciones+"?");
-                        cambio=entrada.nextLine();
+                        operaciones="Suma";
+                        System.out.println("Usted a elegido "+operaciones+".");
                         break;
                     case 2:
-                        System.out.println("Usted a seleccionado "+operaciones+".");
+                        operaciones="Resta";
+                        System.out.println("Usted a elegido "+operaciones+".");
                         break;
                     case 3:
-                        System.out.println("Usted a seleccionado "+operaciones+".");
+                        operaciones="Multiplicación";
+                        System.out.println("Usted a elegido "+operaciones+".");
                         break;
                     case 4:
-                        System.out.println("Usted a seleccionado "+operaciones+".");
+                        operaciones="División";
+                        System.out.println("Usted a elegido "+operaciones+".");
                         break;
                     case 5:
+                        System.out.println("Regresando al menú principal.");
                         menu();
                         break;
-                    case 6:
-                        System.out.println("Cerrando programa.");
-                        break;
                     default:
-                        System.out.println("Ingreso no válido, intente nuevamente.");
-                        calculadora2();
+                        System.err.println("¡ERROR!\nIngreso no válido intente nuevamente");
+                        segunda();
                 }
-            } catch(NumberFormatException ex) {
-                System.err.println("No se admiten valores no numéricos");
+            } catch (NumberFormatException e) {
+                System.err.println("¡ERROR!\nIngreso no válido intente nuevamente");
+                segunda();
             }
+        }
     }
 }
