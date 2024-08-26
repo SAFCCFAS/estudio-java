@@ -1,8 +1,11 @@
 ### IntelliJ IDEA ###
+.idea
 out/
 !**/src/main/**/out/
 !**/src/test/**/out/
 .class
+.gitignore
+Estudio.iml
 
 ### Eclipse ###
 .apt_generated
