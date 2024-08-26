@@ -37,7 +37,6 @@ public class Calculadora {
             menu();
         }
     }
-
     static class CalculadoraI {
         void primera() {
             System.out.println("Favor elija la operación a realizar:\n1-Suma.\n2-Resta.\n3-Multiplicación.");
@@ -137,7 +136,6 @@ public class Calculadora {
             }
         }
     }
-
     static class CalculadoraII {
         void segunda() {
             System.out.println("Favor elija la operación a realizar:\n1-Suma.\n2-Resta.\n3-Multiplicación.");
