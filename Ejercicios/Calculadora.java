@@ -173,6 +173,7 @@ public class Calculadora {
                 }
             } catch (NumberFormatException e) {
                 System.err.println("¡ERROR!\nIngreso no válido intente nuevamente");
+                segunda();
             }
         }
     }
