@@ -14,7 +14,7 @@ public class Calculadora {
         System.out.println("Elija la calculadora a usar: \n1-Calculadora for/if-else");
         System.out.println("2-Calculadora if/switch\n3-Cerrar programa");
         operaciones = entrada.nextLine();
-        try {
+        try { s
             operacionselecionada = Integer.parseInt(operaciones);
             switch (operacionselecionada) {
                 case 1 -> {
