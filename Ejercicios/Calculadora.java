@@ -1,5 +1,4 @@
-import java.util.InputMismatchException;
-import java.util.Scanner;
+import java.util.*;
 
 public class Calculadora {
     static Scanner entrada = new Scanner(System.in);
