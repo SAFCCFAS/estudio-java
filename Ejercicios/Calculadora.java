@@ -19,22 +19,26 @@ public class Calculadora {
                 case 1 -> {
                     CalculadoraI one = new CalculadoraI();
                     one.primera();
-                    break;
+
                 }
                 case 2 -> {
                     CalculadoraII two = new CalculadoraII();
                     two.segunda();
-                    break;
+
                 }
                 case 3 ->
                     System.out.println("Cerrando programa.");
-                default ->
+                default ->{
                     System.err.println("¡ERROR!\nIngreso no válido intente nuevamente.\nOpciones válidas 1 al 3.");
+                    menu();
+                    break;}
+
             }
         } catch (NumberFormatException e) {
             System.err.println("¡ERROR!\nIngreso no válido intente nuevamente.");
             System.err.println("Ingresos válidos números 1 al 3.");
             menu();
+
         }
     }
     static class CalculadoraI {
@@ -63,11 +67,13 @@ public class Calculadora {
                 } else {
                     System.err.println("¡ERROR!\nIngreso no válido intente nuevamente");
                     primera();
+                    System.exit(0);
                 }
             } catch (NumberFormatException e) {
                 System.err.println("¡ERROR!\nIngreso no válido intente nuevamente.");
                 System.err.println("Ingresos válidos números 1 al 5.");
                 primera();
+
             }
             try {
                 for (x = 0; x < 1; x++) {
@@ -85,6 +91,7 @@ public class Calculadora {
                             num2 = entrada.nextInt();
                             result = num1 + num2;
                             System.out.println("El resultado de la " + operaciones + " es: " + result);
+
                         } else if (operacionselecionada == 2) {
                             System.out.println("Ingrese primer número");
                             num1 = entrada.nextInt();
@@ -92,6 +99,7 @@ public class Calculadora {
                             num2 = entrada.nextInt();
                             result = num1 - num2;
                             System.out.println("El resultado de la " + operaciones + " es: " + result);
+
                         } else if (operacionselecionada == 3) {
                             System.out.println("Ingrese primer número");
                             num1 = entrada.nextInt();
@@ -99,6 +107,7 @@ public class Calculadora {
                             num2 = entrada.nextInt();
                             result = num1 * num2;
                             System.out.println("El resultado de la " + operaciones + " es: " + result);
+
                         } else if (operacionselecionada == 4) {
                             System.out.println("Ingrese primer número");
                             double num1 = entrada.nextDouble();
@@ -107,6 +116,7 @@ public class Calculadora {
                             double result = num1 / num2;
                             if (num2 != 0) {
                                 System.out.println("El resultado de la " + operaciones + " es: " + result);
+
                             }else{
                                 System.err.println("¡ERROR! " + operaciones + " entre 0 no permitida.");
                             }
@@ -170,6 +180,41 @@ public class Calculadora {
                         System.err.println("¡ERROR!\nIngreso no válido intente nuevamente");
                         segunda();
                 }
+
+                if (operacionselecionada == 1) {
+                    System.out.println("Ingrese primer número");
+                    num1 = entrada.nextInt();
+                    System.out.println("Ingrese segundo número");
+                    num2 = entrada.nextInt();
+                    result = num1 + num2;
+                    System.out.println("El resultado de la " + operaciones + " es: " + result);
+                } else if (operacionselecionada == 2) {
+                    System.out.println("Ingrese primer número");
+                    num1 = entrada.nextInt();
+                    System.out.println("Ingrese segundo número");
+                    num2 = entrada.nextInt();
+                    result = num1 - num2;
+                    System.out.println("El resultado de la " + operaciones + " es: " + result);
+                } else if (operacionselecionada == 3) {
+                    System.out.println("Ingrese primer número");
+                    num1 = entrada.nextInt();
+                    System.out.println("Ingrese segundo número");
+                    num2 = entrada.nextInt();
+                    result = num1 * num2;
+                    System.out.println("El resultado de la " + operaciones + " es: " + result);
+                } else if (operacionselecionada == 4) {
+                    System.out.println("Ingrese primer número");
+                    double num1 = entrada.nextDouble();
+                    System.out.println("Ingrese primer número");
+                    double num2 = entrada.nextDouble();
+                    double result = num1 / num2;
+                    if (num2 != 0) {
+                        System.out.println("El resultado de la " + operaciones + " es: " + result);
+                    }else{
+                        System.err.println("¡ERROR! " + operaciones + " entre 0 no permitida.");
+                    }
+                }
+
             } catch (NumberFormatException e) {
                 System.err.println("¡ERROR!\nIngreso no válido intente nuevamente");
                 segunda();
