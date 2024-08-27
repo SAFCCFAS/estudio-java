@@ -7,6 +7,7 @@ public class Calculadora {
     static String operaciones, opcion, num;
 
     public static void main(String[] args) {
+        System.out.println("Hola");
         menu();
     }
 
