@@ -28,6 +28,8 @@ bin/
 
 ### VS Code ###
 .vscode/
+.idea
+src
 
 ### Mac OS ###
 .DS_Store
