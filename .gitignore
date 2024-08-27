@@ -30,6 +30,7 @@ bin/
 .vscode/
 .idea
 src
+.gitignore
 
 ### Mac OS ###
 .DS_Store
