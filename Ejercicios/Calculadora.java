@@ -168,10 +168,18 @@ public class Calculadora {
                         break;
                     default:
                         System.err.println("¡ERROR!\nIngreso no válido intente nuevamente");
+                        System.err.println("Opciones válidas del 1 al 5");
                         segunda();
                 }
+
+                if (operacionselecionada == 1|| operacionselecionada == 2||operacionselecionada == 3|| operacionselecionada == 4) {
+                    System.out.println("¿Desea continuar con " + operaciones + "? \n[S/N]");
+                    opcion = entrada.nextLine();
+                }
+
             } catch (NumberFormatException e) {
                 System.err.println("¡ERROR!\nIngreso no válido intente nuevamente");
+                System.err.println("Solo se admiten números");
                 segunda();
             }
         }
