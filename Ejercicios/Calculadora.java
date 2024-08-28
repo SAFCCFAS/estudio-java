@@ -8,7 +8,7 @@ public class Calculadora {
     public static void main(String[] args) {
         menu();
     }
-//w
+//new
     static void menu() {
         System.out.println("Elija la calculadora a usar: \n1-Calculadora for/if-else");
         System.out.println("2-Calculadora if/switch\n3-Cerrar programa");
