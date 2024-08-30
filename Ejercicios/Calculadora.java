@@ -251,32 +251,35 @@ public class Calculadora {
                 operaciones = entrada.nextLine();
                 try {
                     operacionselecionada=Integer.parseInt(operaciones);
+
                     switch (operacionselecionada) {
                         case 1:
                             operaciones="Suma";
+                            System.out.println("Usted a escogido: "+operaciones);
                             break;
                         case 2:
                             operaciones="Resta";
+                            System.out.println("Usted a escogido: "+operaciones);
                             break;
                         case 3:
                             operaciones="Multiplicación";
+                            System.out.println("Usted a escogido: "+operaciones);
                             break;
                         case 4:
                             operaciones="División";
+                            System.out.println("Usted a escogido: "+operaciones);
                             break;
                         case 5:
                             menu();
+                            break;
                         default:
-                        System.out.println("Opción no válida");
-                        break;
+                        System.out.println("Opción no válida");   
                     }
-                    System.out.println("Usted a escogido: "+operaciones);
+                    
                 } catch (NumberFormatException e) {
                     System.out.println("SOlo números");
                 }
-            
-            }while(!operaciones.matches("5"));
-            menu();
+            }while(operacionselecionada!=5);
         }
     }
 }
