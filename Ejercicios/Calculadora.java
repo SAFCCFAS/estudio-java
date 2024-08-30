@@ -260,18 +260,22 @@ public class Calculadora {
                             
                             System.out.println("Desea continuar con "+operaciones+"?");
                             opcion=entrada.nextLine();
+                            control=false;
                             break;
                         case 2:
                             operaciones="Resta";
                             System.out.println("Usted a escogido: "+operaciones);
+                            control=false;
                             break;
                         case 3:
                             operaciones="Multiplicación";
                             System.out.println("Usted a escogido: "+operaciones);
+                            control=false;
                             break;
                         case 4:
                             operaciones="División";
                             System.out.println("Usted a escogido: "+operaciones);
+                            control=false;
                             break;
                         case 5:
                             menu();
@@ -279,6 +283,7 @@ public class Calculadora {
                             break;
                         default:
                         System.out.println("Opción no válida");   
+                        break;
                     }
                 
                 } catch (NumberFormatException e) {
