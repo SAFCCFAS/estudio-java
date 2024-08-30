@@ -34,11 +34,12 @@ public class Calculadora {
                 case 4 ->
                         System.out.println("Cerrando programa.");
                 default ->
-                        System.err.println("¡ERROR!\nIngreso no válido intente nuevamente.\nOpciones válidas 1 al 3.");
+                        System.err.println("¡ERROR!\nIngreso no válido intente nuevamente.\nOpciones válidas 1 al 4.");
+                        
             }
         } catch (NumberFormatException e) {
             System.err.println("¡ERROR!\nIngreso no válido intente nuevamente.");
-            System.err.println("Ingresos válidos números 1 al 3.");
+            System.err.println("Ingresos válidos números 1 al 4.");
             menu();
         }
     }
@@ -152,30 +153,25 @@ public class Calculadora {
                 operacionselecionada = Integer.parseInt(operaciones);
                 switch (operacionselecionada) {
                     case 1:
-                        operaciones = "Suma";
-                        System.out.println("Usted a elegido " + operaciones + ".");
+                        operaciones = "Suma"; 
                         break;
                     case 2:
                         operaciones = "Resta";
-                        System.out.println("Usted a elegido " + operaciones + ".");
                         break;
                     case 3:
                         operaciones = "Multiplicación";
-                        System.out.println("Usted a elegido " + operaciones + ".");
                         break;
                     case 4:
                         operaciones = "División";
-                        System.out.println("Usted a elegido " + operaciones + ".");
                         break;
                     case 5:
-                        System.out.println("Regresando al menú principal.");
                         menu();
                         break;
                     default:
                         System.err.println("¡ERROR!\nIngreso no válido intente nuevamente");
                         System.err.println("Opciones válidas del 1 al 5");
                         segunda();
-                }
+                }System.out.println("Usted a elegido " + operaciones + ".");
 
             } catch (NumberFormatException e) {
                 System.err.println("¡ERROR!\nIngreso no válido intente nuevamente");
@@ -228,7 +224,7 @@ public class Calculadora {
                     }
                     break;
                 case "N","n":
-                    System.out.println("1-Continuar con el cambio, 2-Regresar al menú");
+                    System.out.println("1-Cambiar operación\n2-Regresar al menú");
                     opcion = entrada.nextLine();
                     if(opcion.equals("1")){
                         segunda();
@@ -248,9 +244,23 @@ public class Calculadora {
     }
     static class CalculadoraIII {
         void tercera(){
-            System.out.println("Favor elija la operación a realizar:\n1-Suma.\n2-Resta.\n3-Multiplicación.");
-            System.out.println("4-División.\n5-Regresar al menú.");
-            operaciones = entrada.nextLine();
+            do{
+                System.out.println("Favor elija la operación a realizar:\n1-Suma.\n2-Resta.\n3-Multiplicación.");
+                System.out.println("4-División.\n5-Regresar al menú.");
+                operaciones = entrada.nextLine();
+                try {
+                    operacionselecionada=Integer.parseInt(operaciones);
+                    switch (operacionselecionada) {
+                        case 1->
+                            operaciones="Suma";
+                    }
+                    System.out.println("Usted a escogido: "+operaciones);
+                } catch (NumberFormatException e) {
+                    System.out.println("SOlo números");
+                }
+            
+            }while(!operaciones.matches("5"));
+            menu();
         }
     }
 }
