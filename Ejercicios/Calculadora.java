@@ -3,8 +3,8 @@ import java.util.*;
 public class Calculadora {
     static Scanner entrada = new Scanner(System.in);
     static int x, num1, num2, result, operacionselecionada;
-    static String operaciones, opcion, num;
-
+    static String operaciones, opcion;
+    static boolean control;
     public static void main(String[] args) {
         menu();
     }
@@ -245,6 +245,7 @@ public class Calculadora {
     }
     static class CalculadoraIII {
         void tercera(){
+            control = true;
             do{
                 System.out.println("Favor elija la operación a realizar:\n1-Suma.\n2-Resta.\n3-Multiplicación.");
                 System.out.println("4-División.\n5-Regresar al menú.");
@@ -274,6 +275,7 @@ public class Calculadora {
                             break;
                         case 5:
                             menu();
+                            control=false;
                             break;
                         default:
                         System.out.println("Opción no válida");   
@@ -282,7 +284,7 @@ public class Calculadora {
                 } catch (NumberFormatException e) {
                     System.out.println("SOlo números");
                 }
-            }while(operacionselecionada!=5);
+            }while(control);
         }
     }
 }
