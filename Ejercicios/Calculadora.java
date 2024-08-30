@@ -32,7 +32,8 @@ public class Calculadora {
                     break;
                 }
                 case 4 ->
-                        System.out.println("Cerrando programa.");
+                        {System.out.println("Cerrando programa.");
+                        System.exit(4);}
                 default ->
                         System.err.println("¡ERROR!\nIngreso no válido intente nuevamente.\nOpciones válidas 1 al 4.");
                         
@@ -251,8 +252,23 @@ public class Calculadora {
                 try {
                     operacionselecionada=Integer.parseInt(operaciones);
                     switch (operacionselecionada) {
-                        case 1->
+                        case 1:
                             operaciones="Suma";
+                            break;
+                        case 2:
+                            operaciones="Resta";
+                            break;
+                        case 3:
+                            operaciones="Multiplicación";
+                            break;
+                        case 4:
+                            operaciones="División";
+                            break;
+                        case 5:
+                            menu();
+                        default:
+                        System.out.println("Opción no válida");
+                        break;
                     }
                     System.out.println("Usted a escogido: "+operaciones);
                 } catch (NumberFormatException e) {
