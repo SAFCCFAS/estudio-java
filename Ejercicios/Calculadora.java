@@ -11,7 +11,7 @@ public class Calculadora {
 
     static void menu() {
         System.out.println("Elija la calculadora a usar: \n1-Calculadora for/if-else");
-        System.out.println("2-Calculadora if/switch\n3-Cerrar programa");
+        System.out.println("2-Calculadora if/switch\n3-Calculadora do-while/switch\n4-Cerrar programa");
         operaciones = entrada.nextLine();
         try {
             operacionselecionada = Integer.parseInt(operaciones);
@@ -26,7 +26,12 @@ public class Calculadora {
                     two.segunda();
                     break;
                 }
-                case 3 ->
+                case 3->{
+                    CalculadoraIII three = new CalculadoraIII();
+                    three.tercera();
+                    break;
+                }
+                case 4 ->
                         System.out.println("Cerrando programa.");
                 default ->
                         System.err.println("¡ERROR!\nIngreso no válido intente nuevamente.\nOpciones válidas 1 al 3.");
@@ -239,6 +244,13 @@ public class Calculadora {
                     System.err.println("Opciones válidas S o N");
                     segunda();
             }
+        }
+    }
+    static class CalculadoraIII {
+        void tercera(){
+            System.out.println("Favor elija la operación a realizar:\n1-Suma.\n2-Resta.\n3-Multiplicación.");
+            System.out.println("4-División.\n5-Regresar al menú.");
+            operaciones = entrada.nextLine();
         }
     }
 }
