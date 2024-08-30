@@ -27,9 +27,9 @@ public class Calculadora {
                     break;
                 }
                 case 3 ->
-                    System.out.println("Cerrando programa.");
+                        System.out.println("Cerrando programa.");
                 default ->
-                    System.err.println("¡ERROR!\nIngreso no válido intente nuevamente.\nOpciones válidas 1 al 3.");
+                        System.err.println("¡ERROR!\nIngreso no válido intente nuevamente.\nOpciones válidas 1 al 3.");
             }
         } catch (NumberFormatException e) {
             System.err.println("¡ERROR!\nIngreso no válido intente nuevamente.");
@@ -74,10 +74,10 @@ public class Calculadora {
 
                     System.out.println("¿Desea continuar con la operación " + operaciones + "?\n[S/N]");
                     opcion = entrada.nextLine();
-                    
+
                     if (opcion.trim().isEmpty() || opcion.equalsIgnoreCase("S")) {
                         System.out.println("Recibido, favor seguir las indicaciones.");
-                      
+
                         if (operacionselecionada == 1) {
                             System.out.println("Ingrese primer número");
                             num1 = entrada.nextInt();
@@ -135,7 +135,7 @@ public class Calculadora {
                 System.err.println("Solo se admiten números");
                 primera();
             }
-            
+
         }
     }
     static class CalculadoraII {
@@ -172,15 +172,72 @@ public class Calculadora {
                         segunda();
                 }
 
-                if (operacionselecionada == 1|| operacionselecionada == 2||operacionselecionada == 3|| operacionselecionada == 4) {
-                    System.out.println("¿Desea continuar con " + operaciones + "? \n[S/N]");
-                    opcion = entrada.nextLine();
-                }
-
             } catch (NumberFormatException e) {
                 System.err.println("¡ERROR!\nIngreso no válido intente nuevamente");
                 System.err.println("Solo se admiten números");
                 segunda();
+            }
+            System.out.println("¿Desea continuar con: "+operaciones+"?\n[S/N]");
+            opcion = entrada.nextLine();
+            switch (opcion) {
+                case "S","s","":
+                    System.out.println("Seguir instrucciones");
+                    try{
+                        if (operacionselecionada == 1) {
+                            System.out.println("Ingrese primer número");
+                            num1 = entrada.nextInt();
+                            System.out.println("Ingrese segundo número");
+                            num2 = entrada.nextInt();
+                            result = num1 + num2;
+                            System.out.println("El resultado de la " + operaciones + " es: " + result);
+                        } else if (operacionselecionada == 2) {
+                            System.out.println("Ingrese primer número");
+                            num1 = entrada.nextInt();
+                            System.out.println("Ingrese segundo número");
+                            num2 = entrada.nextInt();
+                            result = num1 - num2;
+                            System.out.println("El resultado de la " + operaciones + " es: " + result);
+                        } else if (operacionselecionada == 3) {
+                            System.out.println("Ingrese primer número");
+                            num1 = entrada.nextInt();
+                            System.out.println("Ingrese segundo número");
+                            num2 = entrada.nextInt();
+                            result = num1 * num2;
+                            System.out.println("El resultado de la " + operaciones + " es: " + result);
+                        } else if (operacionselecionada == 4) {
+                            System.out.println("Ingrese primer número");
+                            double num1 = entrada.nextDouble();
+                            System.out.println("Ingrese primer número");
+                            double num2 = entrada.nextDouble();
+                            double result = num1 / num2;
+                            if (num2 != 0) {
+                                System.out.println("El resultado de la " + operaciones + " es: " + result);
+                            }else{
+                                System.err.println("¡ERROR! " + operaciones + " entre 0 no permitida.");
+                            }
+                        }
+                    }catch(Exception e){
+                        System.err.println("¡ERROR!\nIngreso no válido intente nuevamente");
+                        System.err.println("Solo se admiten números");
+                        segunda();
+                    }
+                    break;
+                case "N","n":
+                    System.out.println("1-Continuar con el cambio, 2-Regresar al menú");
+                    opcion = entrada.nextLine();
+                    if(opcion.equals("1")){
+                        segunda();
+                    }else if(opcion.equals("2")){
+                        menu();
+                    }else{
+                        System.err.println("¡ERROR!\nIngreso no válido intente nuevamente");
+                        System.err.println("Opciones válidas 1 o 2");
+                    }
+                    break;
+                default:
+                    System.err.println("¡ERROR!\nIngreso no válido intente nuevamente");
+                    System.err.println("Opciones válidas S o N");
+                    segunda();
             }
         }
     }
