@@ -256,6 +256,9 @@ public class Calculadora {
                         case 1:
                             operaciones="Suma";
                             System.out.println("Usted a escogido: "+operaciones);
+                            
+                            System.out.println("Desea continuar con "+operaciones+"?");
+                            opcion=entrada.nextLine();
                             break;
                         case 2:
                             operaciones="Resta";
@@ -275,7 +278,7 @@ public class Calculadora {
                         default:
                         System.out.println("Opción no válida");   
                     }
-                    
+                
                 } catch (NumberFormatException e) {
                     System.out.println("SOlo números");
                 }
