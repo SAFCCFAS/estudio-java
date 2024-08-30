@@ -11,7 +11,7 @@ public class Calculadora {
 
     static void menu() {
         System.out.println("Elija la calculadora a usar: \n1-Calculadora for/if-else");
-        System.out.println("2-Calculadora if/switch\n3-Calculadora do-while/switch \n4-Cerrar programa");
+        System.out.println("2-Calculadora if/switch\n3-Cerrar programa");
         operaciones = entrada.nextLine();
         try {
             operacionselecionada = Integer.parseInt(operaciones);
@@ -26,12 +26,7 @@ public class Calculadora {
                     two.segunda();
                     break;
                 }
-                case 3->{
-                    CalculadoraIII three = new CalculadoraIII();
-                    three.tercera();
-                    break;
-                }
-                case 4 ->
+                case 3 ->
                     System.out.println("Cerrando programa.");
                 default ->
                     System.err.println("¡ERROR!\nIngreso no válido intente nuevamente.\nOpciones válidas 1 al 3.");
@@ -177,81 +172,16 @@ public class Calculadora {
                         segunda();
                 }
 
+                if (operacionselecionada == 1|| operacionselecionada == 2||operacionselecionada == 3|| operacionselecionada == 4) {
+                    System.out.println("¿Desea continuar con " + operaciones + "? \n[S/N]");
+                    opcion = entrada.nextLine();
+                }
+
             } catch (NumberFormatException e) {
                 System.err.println("¡ERROR!\nIngreso no válido intente nuevamente");
                 System.err.println("Solo se admiten números");
                 segunda();
             }
-            System.out.println("¿Desea continuar con: " + operaciones + "?\n[S/N]");
-            opcion = entrada.nextLine();
-            switch (opcion) {
-                case "S", "s", "":
-                    System.out.println("Seguir instrucciones");
-                    try {
-                        if (operacionselecionada == 1) {
-                            System.out.println("Ingrese primer número");
-                            num1 = entrada.nextInt();
-                            System.out.println("Ingrese segundo número");
-                            num2 = entrada.nextInt();
-                            result = num1 + num2;
-                            System.out.println("El resultado de la " + operaciones + " es: " + result);
-                        } else if (operacionselecionada == 2) {
-                            System.out.println("Ingrese primer número");
-                            num1 = entrada.nextInt();
-                            System.out.println("Ingrese segundo número");
-                            num2 = entrada.nextInt();
-                            result = num1 - num2;
-                            System.out.println("El resultado de la " + operaciones + " es: " + result);
-                        } else if (operacionselecionada == 3) {
-                            System.out.println("Ingrese primer número");
-                            num1 = entrada.nextInt();
-                            System.out.println("Ingrese segundo número");
-                            num2 = entrada.nextInt();
-                            result = num1 * num2;
-                            System.out.println("El resultado de la " + operaciones + " es: " + result);
-                        } else if (operacionselecionada == 4) {
-                            System.out.println("Ingrese primer número");
-                            double num1 = entrada.nextDouble();
-                            System.out.println("Ingrese primer número");
-                            double num2 = entrada.nextDouble();
-                            double result = num1 / num2;
-                            if (num2 != 0) {
-                                System.out.println("El resultado de la " + operaciones + " es: " + result);
-                            } else {
-                                System.err.println("¡ERROR! " + operaciones + " entre 0 no permitida.");
-                            }
-                        }
-                    } catch (Exception e) {
-                        System.err.println("¡ERROR!\nIngreso no válido intente nuevamente");
-                        System.err.println("Solo se admiten números");
-                        segunda();
-                    }
-                    break;
-                case "N", "n":
-                    System.out.println("1-Continuar con el cambio, 2-Regresar al menú");
-                    opcion = entrada.nextLine();
-                    if (opcion.equals("1")) {
-                        segunda();
-                    } else if (opcion.equals("2")) {
-                        menu();
-                    } else {
-                        System.err.println("¡ERROR!\nIngreso no válido intente nuevamente");
-                        System.err.println("Opciones válidas 1 o 2");
-                    }
-                    break;
-                default:
-                    System.err.println("¡ERROR!\nIngreso no válido intente nuevamente");
-                    System.err.println("Opciones válidas S o N");
-                    segunda();
-            }
-        }
-
-    }
-    static class CalculadoraIII{
-        void tercera(){
-            System.out.println("Favor elija la operación a realizar:\n1-Suma.\n2-Resta.\n3-Multiplicación.");
-            System.out.println("4-División.\n5-Regresar al menú.");
-            operaciones=entrada.nextLine();
         }
     }
 }
