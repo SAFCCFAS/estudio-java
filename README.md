@@ -8,7 +8,8 @@ El repositorio está organizado en carpetas, cada una correspondiente a un tema 
 
 ```
 /Ejercicios/
-    - Calculadora.java
+    - CalculadoraNew.java
+    - CalculadoraOld.java
 ```
 
 ## Contenido

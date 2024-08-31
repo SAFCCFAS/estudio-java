@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Calculadora {
+public class CalculadoraExtensa {
 
     static Scanner entrada = new Scanner(System.in);
     static int x, num1, num2, result, operacionselecionada;
