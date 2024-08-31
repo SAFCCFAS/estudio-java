@@ -21,6 +21,37 @@ Hasta ahora, he cubierto los siguientes temas en Java:
 
 Voy a seguir añadiendo más ejercicios y temas a medida que avance en mi aprendizaje.
 
+## Descripción
+
+El programa presenta un menú principal donde el usuario puede seleccionar una de las cuatro calculadoras, cada una implementada con diferentes estructuras de control. Tras seleccionar una calculadora, se le pide al usuario que elija la operación matemática a realizar y que introduzca los números correspondientes. La calculadora realiza la operación seleccionada y muestra el resultado en pantalla.
+
+### Modos de Implementación
+
+1. **Calculadora I**: Utiliza estructuras `for` e `if-else`.
+2. **Calculadora II**: Implementa `switch` combinado con `if`.
+3. **Calculadora III**: Usa `do-while` junto con `switch`.
+4. **Calculadora IV**: Combina `switch`, `if-else`, y `for`.
+
+### Estructura del Proyecto
+
+- **Main Class**: Contiene el menú principal y llama a las diferentes clases según la elección del usuario.
+- **Sub Clases**: Cada calculadora tiene su propia clase (`CalculadoraI`, `CalculadoraII`, etc.) donde se implementan las operaciones específicas.
+
+## Funcionalidades
+
+- **Operaciones Básicas**: Suma, resta, multiplicación y división.
+- **Navegación**: Posibilidad de volver al menú principal o cambiar de operación.
+- **Validación de Entradas**: Se valida que las entradas sean números y se manejan las excepciones adecuadamente.
+
+## Manejo de Excepciones
+
+El proyecto implementa manejo de excepciones para asegurar la estabilidad del programa frente a entradas no válidas y otros errores comunes.
+
+### Excepciones Manejadas:
+- **NumberFormatException**: Capturada cuando el usuario ingresa un valor no numérico en lugar de un número, como cuando se espera un entero pero se proporciona texto.
+- **Exception**: Captura cualquier otro tipo de error no específico que pueda ocurrir durante la ejecución, asegurando que el programa maneje adecuadamente situaciones inesperadas.
+
+
 ## Cómo Usar Este Repositorio
 
 Si quieres revisar o ejecutar los ejercicios, sigue estos pasos:
@@ -68,6 +99,7 @@ Que me ha ayudado en este camino:
 *  https://docs.oracle.com/en/java/
 *  https://docs.oracle.com/javase/8/docs/api/
 *  https://www.sololearn.com/es/learn/courses/le-java
+*  
 
 ## Licencia
 
