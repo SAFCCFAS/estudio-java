@@ -298,6 +298,56 @@ public class Calculadora {
                         switch (opcion) {
                             case "S","s":
                                 System.out.println("Seguir las instrucciones");
+                                try{
+                                    switch (operacionselecionada) {
+                                        
+                                        case 1:
+                                            System.out.println("Ingresa primer número");
+                                            num1 = entrada.nextInt();
+                                            System.out.println("Ingrese segundo número");
+                                            num2 = entrada.nextInt();
+                                            result = num1+num2;
+                                            System.out.println("El resultado de la "+operaciones+" es: "+result);
+                                            control=false;
+                                            break;
+                                        case 2:
+                                            System.out.println("Ingresa primer número");
+                                            num1 = entrada.nextInt();
+                                            System.out.println("Ingrese segundo número");
+                                            num2 = entrada.nextInt();
+                                            result = num1-num2;
+                                            System.out.println("El resultado de la "+operaciones+" es: "+result);
+                                            control=false;
+                                            break;
+                                        case 3:
+                                            System.out.println("Ingresa primer número");
+                                            num1 = entrada.nextInt();
+                                            System.out.println("Ingrese segundo número");
+                                            num2 = entrada.nextInt();
+                                            result = num1*num2;
+                                            System.out.println("El resultado de la "+operaciones+" es: "+result);
+                                            control=false;
+                                            break;
+                                        case 4: 
+                                            System.out.println("Ingrese el primer número");
+                                            float num1 = entrada.nextInt();
+                                            System.out.println("Ingrese el segundo número");
+                                            float num2 = entrada.nextInt();
+                                            try {
+                                               float result = num1 / num2;
+                                                System.out.println("El resultado de la "+operaciones+" es: " + result);
+                                            } catch (ArithmeticException e){
+                                                System.err.println("¡ERROR! "+operaciones+" por cero no permitida.");
+                                            }
+                                                control = false; 
+                                                break;
+                                            }
+                                }catch(Exception e){
+                                    System.err.println("¡ERROR!\nIngreso no válido intente nuevamente");
+                                    System.err.println("Solo se admiten números");
+                                    control=true;
+                                }
+
                                 break;
                             case "N","n":
                                 System.out.println("1-Cambio de operación\n2-Regresar al menú");
