@@ -35,12 +35,13 @@ public class Calculadora {
                         {System.out.println("Cerrando programa.");
                         System.exit(4);}
                 default ->
-                        System.err.println("¡ERROR!\nIngreso no válido intente nuevamente.\nOpciones válidas 1 al 4.");
+                        {System.err.println("¡ERROR!\nIngreso no válido intente nuevamente.\nOpciones válidas 1 al 4.");
+                        menu();}
                         
             }
         } catch (NumberFormatException e) {
             System.err.println("¡ERROR!\nIngreso no válido intente nuevamente.");
-            System.err.println("Ingresos válidos números 1 al 4.");
+            System.err.println("Solo se admiten números (1-4)");
             menu();
         }
     }
@@ -247,10 +248,11 @@ public class Calculadora {
         void tercera(){
             control = true;
             do{
-                System.out.println("Favor elija la operación a realizar:\n1-Suma.\n2-Resta.\n3-Multiplicación.");
-                System.out.println("4-División.\n5-Regresar al menú.");
-                operaciones = entrada.nextLine();
+                
                 try {
+                    System.out.println("Favor elija la operación a realizar:\n1-Suma.\n2-Resta.\n3-Multiplicación.");
+                    System.out.println("4-División.\n5-Regresar al menú.");
+                    operaciones = entrada.nextLine();
                     operacionselecionada=Integer.parseInt(operaciones);
 
                     switch (operacionselecionada) {
@@ -279,14 +281,39 @@ public class Calculadora {
                             control=false;
                             break;
                         default:
-                        System.out.println("Opción no válida");
+                        System.err.println("¡ERROR!\nIngreso no válido intente nuevamente");
+                        System.err.println("Opciones válidas del 1 al 5");
                         break;
                     }
-                
+                    
+                    
                 } catch (NumberFormatException e) {
-                    System.out.println("SOlo números");
-                }       
-            }while(control);
-        }   
+                    System.err.println("¡ERROR!\nIngreso no válido intente nuevamente");
+                    System.err.println("Solo se admiten números");
+                }
+                switch (operacionselecionada) {
+                    case 1,2,3,4:
+                        System.out.println("¿Desea continuar con "+operaciones+"?\n[S/N]");
+                        opcion=entrada.nextLine();
+                        switch (opcion) {
+                            case "S","s":
+                                System.out.println("Seguir las instrucciones");
+                                break;
+                            case "N","n":
+                                System.out.println("1-Cambio de operación\n2-Regresar al menú");
+                                opcion=entrada.nextLine();
+                                
+
+                            default:
+                                System.err.println("¡ERROR!\nIngreso no válido intente nuevamente");
+                                System.err.println("Opciones válidas S o N");
+                                control=true;
+                                break;
+                        }
+                        break;
+                }
+            }while(control!=false);
+        }
+        
     }
 }
