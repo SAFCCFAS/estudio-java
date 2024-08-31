@@ -36,6 +36,12 @@ El programa presenta un menú principal donde el usuario puede seleccionar una d
 3. **Calculadora III**: Usa `do-while` junto con `switch`.
 4. **Calculadora IV**: Combina `switch`, `if-else`, y `for`.
 
+### Versiones de la Calculadora
+
+* **Versión Extensa**: Esta versión incluye el código completo y detallado que emplea diversas estructuras de control para demostrar el uso de condicionales y bucles en Java. Es ideal para aprender y entender cómo funcionan estos conceptos en diferentes contextos.
+
+* **Versión Simplificada**: Esta versión está diseñada para ser más compacta y clara, enfocándose en una implementación más directa y eficiente del mismo problema. Es útil para quienes ya están familiarizados con los conceptos y buscan un código más limpio y menos detallado.
+
 ### Estructura del Proyecto
 
 - **Main Class**: Contiene el menú principal y llama a las diferentes clases según la elección del usuario.
