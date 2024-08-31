@@ -303,15 +303,23 @@ public class Calculadora {
                                 System.out.println("1-Cambio de operación\n2-Regresar al menú");
                                 opcion=entrada.nextLine();
                                 
+                                switch(opcion){
+                                    case "1"-> {tercera();break;}
+                                    case "2"-> {menu();control=false;}
+                                    default -> {System.err.println("¡ERROR!\nIngreso no válido intente nuevamente");
+                                                System.err.println("Opciones válidas 1 o 2");
+                                                control=true;
+                                                break;}
+                                }
 
                             default:
-                                System.err.println("¡ERROR!\nIngreso no válido intente nuevamente");
+                                {System.err.println("¡ERROR!\nIngreso no válido intente nuevamente");
                                 System.err.println("Opciones válidas S o N");
                                 control=true;
-                                break;
+                                break;}
                         }
                         break;
-                }
+                } 
             }while(control!=false);
         }
         
