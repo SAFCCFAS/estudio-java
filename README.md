@@ -7,9 +7,12 @@
 El repositorio está organizado en carpetas, cada una correspondiente a un tema o concepto de Java que estoy estudiando. Aquí te dejo una descripción general de la estructura:
 
 ```
-/Ejercicios/Calculadora/
-    - CalculadoraNew.java
-    - CalculadoraOld.java
+/Ejercicios/
+    /Calculadora/
+        /Versión extensa/
+            - CalculadoraExtensa.java
+        /Versión simplificada/
+            - CalculadoraSimplicada.java
 ```
 
 ## Contenido
