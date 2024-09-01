@@ -356,7 +356,6 @@ public class CalculadoraSimplificada {
                                         case 4:
                                             num1 = ingresodato();
                                             num2 = ingresodato();
-                                            
                                             try {
                                                 System.out.println("El resultado de la " + operaciones + " es: " +division(num1, num2));
                                             } catch (ArithmeticException e) {
@@ -474,34 +473,22 @@ public class CalculadoraSimplificada {
             try {
                 for (x = 0; x < 1; x++) {
                     if (operacionselecionada == 1) {
-                        System.out.println("Ingrese primer número");
-                        num1 = entrada.nextInt();
-                        System.out.println("Ingrese segundo número");
-                        num2 = entrada.nextInt();
-                        result = num1 + num2;
-                        System.out.println("El resultado de la " + operaciones + " es: " + result);
+                        num1 = ingresodato();
+                        num2 = ingresodato();
+                        System.out.println("El resultado de la " + operaciones + " es: " + suma(num1, num2));
                     } else if (operacionselecionada == 2) {
-                        System.out.println("Ingrese primer número");
-                        num1 = entrada.nextInt();
-                        System.out.println("Ingrese segundo número");
-                        num2 = entrada.nextInt();
-                        result = num1 - num2;
-                        System.out.println("El resultado de la " + operaciones + " es: " + result);
+                        num1 = ingresodato();
+                        num2 = ingresodato();
+                        System.out.println("El resultado de la " + operaciones + " es: " + resta(num1, num2));
                     } else if (operacionselecionada == 3) {
-                        System.out.println("Ingrese primer número");
-                        num1 = entrada.nextInt();
-                        System.out.println("Ingrese segundo número");
-                        num2 = entrada.nextInt();
-                        result = num1 * num2;
-                        System.out.println("El resultado de la " + operaciones + " es: " + result);
+                        num1 = ingresodato();
+                        num2 = ingresodato();
+                        System.out.println("El resultado de la " + operaciones + " es: " + multiplicacion(num1, num2));
                     } else if (operacionselecionada == 4) {
-                        System.out.println("Ingrese primer número");
-                        double num1 = entrada.nextDouble();
-                        System.out.println("Ingrese primer número");
-                        double num2 = entrada.nextDouble();
-                        double result = num1 / num2;
+                        num1 = ingresodato();
+                        num2 = ingresodato();
                         if (num2 != 0) {
-                            System.out.println("El resultado de la " + operaciones + " es: " + result);
+                            System.out.println("El resultado de la " + operaciones + " es: " + division(num1, num2));
                         } else {
                             System.err.println("¡ERROR! " + operaciones + " entre 0 no permitida.");
                         }
