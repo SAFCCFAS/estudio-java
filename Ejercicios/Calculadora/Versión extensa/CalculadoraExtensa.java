@@ -204,19 +204,27 @@ public class CalculadoraExtensa {
                 case "S", "s", "":
                     System.out.println("Seguir instrucciones");
                     try {
-                        System.out.println("Ingrese primer número");
-                        num1 = entrada.nextInt();
-                        System.out.println("Ingrese segundo número");
-                        num2 = entrada.nextInt();
                         if (operacionselecionada == 1) {
+                            System.out.println("Ingrese primer número");
+                            num1 = entrada.nextInt();
+                            System.out.println("Ingrese segundo número");
+                            num2 = entrada.nextInt();
                             result = num1 + num2;
                             System.out.println("El resultado de la " + operaciones + " es: " + result);
                             break;
                         } else if (operacionselecionada == 2) {
+                            System.out.println("Ingrese primer número");
+                            num1 = entrada.nextInt();
+                            System.out.println("Ingrese segundo número");
+                            num2 = entrada.nextInt();
                             result = num1 - num2;
                             System.out.println("El resultado de la " + operaciones + " es: " + result);
                             break;
                         } else if (operacionselecionada == 3) {
+                            System.out.println("Ingrese primer número");
+                            num1 = entrada.nextInt();
+                            System.out.println("Ingrese segundo número");
+                            num2 = entrada.nextInt();
                             result = num1 * num2;
                             System.out.println("El resultado de la " + operaciones + " es: " + result);
                             break;
@@ -359,7 +367,7 @@ public class CalculadoraExtensa {
                                             control = false;
                                             break;
                                     }
-                                } catch (Exception e) {
+                                } catch (NumberFormatException e) {
                                     System.err.println("¡ERROR!\nIngreso no válido intente nuevamente");
                                     System.err.println("Solo se admiten números");
                                     entrada.nextLine();

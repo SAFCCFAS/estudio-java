@@ -1,4 +1,5 @@
 
+import java.text.NumberFormat;
 import java.util.*;
 
 public class CalculadoraSimplificada {
@@ -227,30 +228,27 @@ public class CalculadoraSimplificada {
                 case "S", "s", "":
                     System.out.println("Seguir instrucciones");
                     try {
-                        System.out.println("Ingrese primer número");
-                        num1 = entrada.nextInt();
-                        System.out.println("Ingrese segundo número");
-                        num2 = entrada.nextInt();
                         if (operacionselecionada == 1) {
-                            result = num1 + num2;
-                            System.out.println("El resultado de la " + operaciones + " es: " + result);
+                            num1 = ingresodato();
+                            num2 = ingresodato();
+                            System.out.println("El resultado de la " + operaciones + " es: " +suma(num1, num2));
                             break;
                         } else if (operacionselecionada == 2) {
-                            result = num1 - num2;
-                            System.out.println("El resultado de la " + operaciones + " es: " + result);
+                            num1 = ingresodato();
+                            num2 = ingresodato();
+                            System.out.println("El resultado de la " + operaciones + " es: " +resta(num1, num2));
                             break;
                         } else if (operacionselecionada == 3) {
-                            result = num1 * num2;
-                            System.out.println("El resultado de la " + operaciones + " es: " + result);
+                            num1 = ingresodato();
+                            num2 = ingresodato();
+                            System.out.println("El resultado de la " + operaciones + " es: " +multiplicacion(num1, num2));
                             break;
                         } else if (operacionselecionada == 4) {
-                            System.out.println("Ingrese primer número");
-                            double num1 = entrada.nextDouble();
-                            System.out.println("Ingrese primer número");
-                            double num2 = entrada.nextDouble();
-                            double result = num1 / num2;
+                            num1 = ingresodato();
+                            num2 = ingresodato();
                             if (num2 != 0) {
-                                System.out.println("El resultado de la " + operaciones + " es: " + result);
+                                System.out.println("El resultado de la " + operaciones + " es: " +division(num1, num2));
+                                
                             } else {
                                 System.err.println("¡ERROR! " + operaciones + " entre 0 no permitida.");
                             }
@@ -338,49 +336,36 @@ public class CalculadoraSimplificada {
                                     switch (operacionselecionada) {
 
                                         case 1:
-                                            System.out.println("Ingresa primer número");
-                                            num1 = entrada.nextInt();
-                                            System.out.println("Ingrese segundo número");
-                                            num2 = entrada.nextInt();
-                                            result = num1 + num2;
-                                            System.out.println("El resultado de la " + operaciones + " es: " + result);
+                                            num1 = ingresodato();
+                                            num2 = ingresodato();
+                                            System.out.println("El resultado de la " + operaciones + " es: " +suma(num1, num2));
                                             control = false;
                                             break;
                                         case 2:
-                                            System.out.println("Ingresa primer número");
-                                            num1 = entrada.nextInt();
-                                            System.out.println("Ingrese segundo número");
-                                            num2 = entrada.nextInt();
-                                            result = num1 - num2;
-                                            System.out.println("El resultado de la " + operaciones + " es: " + result);
+                                            num1 = ingresodato();
+                                            num2 = ingresodato();
+                                            System.out.println("El resultado de la " + operaciones + " es: " +resta(num1, num2));
                                             control = false;
                                             break;
                                         case 3:
-                                            System.out.println("Ingresa primer número");
-                                            num1 = entrada.nextInt();
-                                            System.out.println("Ingrese segundo número");
-                                            num2 = entrada.nextInt();
-                                            result = num1 * num2;
-                                            System.out.println("El resultado de la " + operaciones + " es: " + result);
+                                            num1 = ingresodato();
+                                            num2 = ingresodato();
+                                            System.out.println("El resultado de la " + operaciones + " es: " +multiplicacion(num1, num2));
                                             control = false;
                                             break;
                                         case 4:
-                                            System.out.println("Ingrese el primer número");
-                                            float num1 = entrada.nextInt();
-                                            System.out.println("Ingrese el segundo número");
-                                            float num2 = entrada.nextInt();
+                                            num1 = ingresodato();
+                                            num2 = ingresodato();
+                                            
                                             try {
-                                                float result = num1 / num2;
-                                                System.out.println(
-                                                        "El resultado de la " + operaciones + " es: " + result);
+                                                System.out.println("El resultado de la " + operaciones + " es: " +division(num1, num2));
                                             } catch (ArithmeticException e) {
-                                                System.err
-                                                        .println("¡ERROR! " + operaciones + " por cero no permitida.");
+                                                System.err.println("¡ERROR! " + operaciones + " por cero no permitida.");
                                             }
                                             control = false;
                                             break;
                                     }
-                                } catch (Exception e) {
+                                } catch (NumberFormatException e) {
                                     System.err.println("¡ERROR!\nIngreso no válido intente nuevamente");
                                     System.err.println("Solo se admiten números");
                                     entrada.nextLine();
@@ -388,7 +373,7 @@ public class CalculadoraSimplificada {
                                 }
 
                                 break;
-                            case "N", "n":
+                                case "N", "n":
                                 System.out.println("1-Cambio de operación\n2-Regresar al menú");
                                 opcion = entrada.nextLine();
 
