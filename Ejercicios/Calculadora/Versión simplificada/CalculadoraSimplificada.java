@@ -4,10 +4,9 @@ import java.util.*;
 public class CalculadoraSimplificada {
 
     static Scanner entrada = new Scanner(System.in);
-    static int x, num1, num2, result, operacionselecionada;
+    static int x, num, num1, num2, result, operacionselecionada;
     static String operaciones, opcion;
     static boolean control;
-    static float num;
 
     public static void main(String[] args) {
         menu();
@@ -73,10 +72,16 @@ public class CalculadoraSimplificada {
         opcion = entrada.nextLine();
     }
 
-    static void ingresodato() {
+    static int ingresodato() {
         System.out.println("Favor, ingrese un número");
         num = entrada.nextInt();
+        return num;
     }
+
+    static int suma(int a,int b){
+        return a + b;
+    }
+
 
     static class CalculadoraI {
         void primera() {
@@ -117,12 +122,9 @@ public class CalculadoraSimplificada {
                         System.out.println("Recibido, favor seguir las indicaciones.");
 
                         if (operacionselecionada == 1) {
-                            System.out.println("Ingrese primer número");
-                            num1 = entrada.nextInt();
-                            System.out.println("Ingrese segundo número");
-                            num2 = entrada.nextInt();
-                            result = num1 + num2;
-                            System.out.println("El resultado de la " + operaciones + " es: " + result);
+                            num1 = ingresodato();
+                            num2 = ingresodato();
+                            System.out.println("El resultado de la "+operaciones+" es: "+suma(num1, num2));
                         } else if (operacionselecionada == 2) {
                             System.out.println("Ingrese primer número");
                             num1 = entrada.nextInt();

@@ -43,13 +43,12 @@ public class CalculadoraExtensa {
                 }
                 case 5 -> {
                     System.out.println("Cerrando programa.");
-                    System.exit(4);
+                    System.exit(5);
                 }
                 default -> {
                     System.err.println("¡ERROR!\nIngreso no válido intente nuevamente." +
                             "\nOpciones válidas 1 al 5.");
                     menu();
-                    System.exit(0);
                 }
 
             }
@@ -83,16 +82,15 @@ public class CalculadoraExtensa {
                     System.out.println("Usted a elegido: " + operaciones + ".");
                 } else if (operacionselecionada == 5) {
                     menu();
-                    System.exit(5);
                 } else {
-                    System.err.println("¡ERROR!\nIngreso no válido intente nuevamente");
+                    System.err.println("¡ERROR!\nIngreso no válido intente nuevamente" +
+                            "\nOpciones válidas 1 al 5.");
                     primera();
                 }
             } catch (Exception e) {
                 System.err.println("¡ERROR!\nIngreso no válido intente nuevamente." +
-                        "\nIngresos válidos números 1 al 5.");
+                        "\nIngresos válidos números (1 al 5).");
                 primera();
-                System.exit(0);
             }
             try {
                 for (x = 0; x < 1; x++) {
@@ -372,7 +370,6 @@ public class CalculadoraExtensa {
                             case "N", "n":
                                 System.out.println("1-Cambio de operación\n2-Regresar al menú");
                                 opcion = entrada.nextLine();
-
                                 switch (opcion) {
                                     case "1" -> {
                                         tercera();
@@ -389,15 +386,15 @@ public class CalculadoraExtensa {
                                         break;
                                     }
                                 }
-
+                                break;
                             default: {
                                 System.err.println("¡ERROR!\nIngreso no válido intente nuevamente"
                                         + "\nOpciones válidas S o N");
-                                control = true;
+                                entrada.nextLine();
+                                control = false;
                                 break;
                             }
                         }
-                        break;
                 }
             } while (control != false);
         }
@@ -442,6 +439,7 @@ public class CalculadoraExtensa {
             } catch (NumberFormatException e) {
                 System.err.println("¡ERROR!\nIngreso no válido intente nuevamente"
                         + "\nSolo se admiten números");
+                entrada.nextLine();
                 cuarta();
             }
 
@@ -450,23 +448,27 @@ public class CalculadoraExtensa {
                 opcion = entrada.nextLine();
                 if (opcion.equalsIgnoreCase("S")) {
                     System.out.println("Seguir instrucciones");
+
                 } else if (opcion.equalsIgnoreCase("N")) {
                     System.out.println("1-Cambiar operación.\n2-Volver al menú");
                     opcion = entrada.nextLine();
                     switch (opcion) {
-                        case "1" -> cuarta();
+                        case "1" -> {
+                            cuarta();
+                            break;
+                        }
                         case "2" -> menu();
                         default -> {
                             System.err.println("¡ERROR!\nIngreso no válido intente nuevamente"
                                     + "\nOpciones válidas 1 o 2");
                             cuarta();
+                            break;
                         }
                     }
                 } else {
                     System.err.println("¡ERROR!\nIngreso no válido intente nuevamente"
                             + "\nOpciones válidas S o N");
                     cuarta();
-                    System.exit(0);
                 }
             }
             try {
@@ -478,6 +480,7 @@ public class CalculadoraExtensa {
                         num2 = entrada.nextInt();
                         result = num1 + num2;
                         System.out.println("El resultado de la " + operaciones + " es: " + result);
+                        break;
                     } else if (operacionselecionada == 2) {
                         System.out.println("Ingrese primer número");
                         num1 = entrada.nextInt();
@@ -485,6 +488,7 @@ public class CalculadoraExtensa {
                         num2 = entrada.nextInt();
                         result = num1 - num2;
                         System.out.println("El resultado de la " + operaciones + " es: " + result);
+                        break;
                     } else if (operacionselecionada == 3) {
                         System.out.println("Ingrese primer número");
                         num1 = entrada.nextInt();
@@ -492,6 +496,7 @@ public class CalculadoraExtensa {
                         num2 = entrada.nextInt();
                         result = num1 * num2;
                         System.out.println("El resultado de la " + operaciones + " es: " + result);
+                        break;
                     } else if (operacionselecionada == 4) {
                         System.out.println("Ingrese primer número");
                         double num1 = entrada.nextDouble();
@@ -500,6 +505,7 @@ public class CalculadoraExtensa {
                         double result = num1 / num2;
                         if (num2 != 0) {
                             System.out.println("El resultado de la " + operaciones + " es: " + result);
+                            break;
                         } else {
                             System.err.println("¡ERROR! " + operaciones + " entre 0 no permitida.");
                         }
