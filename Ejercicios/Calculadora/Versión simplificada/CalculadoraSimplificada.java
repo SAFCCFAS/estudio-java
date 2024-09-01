@@ -72,16 +72,32 @@ public class CalculadoraSimplificada {
         opcion = entrada.nextLine();
     }
 
+    static void otraoperacion(){
+        System.out.println("¿Desea realiza otra operación?\n[S/N]");
+        opcion = entrada.nextLine();
+    }
+
     static int ingresodato() {
         System.out.println("Favor, ingrese un número");
         num = entrada.nextInt();
         return num;
     }
 
-    static int suma(int a,int b){
+    static int suma(int a, int b) {
         return a + b;
     }
 
+    static int resta(int a, int b) {
+        return a - b;
+    }
+
+    static int multiplicacion(int a, int b) {
+        return a * b;
+    }
+
+    static float division(float a, float b) {
+        return a / b;
+    }
 
     static class CalculadoraI {
         void primera() {
@@ -111,7 +127,6 @@ public class CalculadoraSimplificada {
                 System.err.println("¡ERROR!\nIngreso no válido intente nuevamente." +
                         "\nIngresos válidos números 1 al 5.");
                 primera();
-                System.exit(0);
             }
             try {
                 for (x = 0; x < 1; x++) {
@@ -120,37 +135,31 @@ public class CalculadoraSimplificada {
 
                     if (opcion.trim().isEmpty() || opcion.equalsIgnoreCase("S")) {
                         System.out.println("Recibido, favor seguir las indicaciones.");
-
+                        
                         if (operacionselecionada == 1) {
-                            num = ingresodato();
-                            num = ingresodato();
-                            System.out.println("El resultado de la "+operaciones+" es: "+suma(num, num));
+                            num1 = ingresodato();
+                            num2 = ingresodato();
+                            System.out.println("El resultado de la " + operaciones + " es: " + suma(num1, num2));
+                            
                         } else if (operacionselecionada == 2) {
-                            System.out.println("Ingrese primer número");
-                            num1 = entrada.nextInt();
-                            System.out.println("Ingrese segundo número");
-                            num2 = entrada.nextInt();
-                            result = num1 - num2;
-                            System.out.println("El resultado de la " + operaciones + " es: " + result);
+                            num1 = ingresodato();
+                            num2 = ingresodato();
+                            System.out.println("El resultado de la " + operaciones + " es: " + resta(num1, num2));
                         } else if (operacionselecionada == 3) {
-                            System.out.println("Ingrese primer número");
-                            num1 = entrada.nextInt();
-                            System.out.println("Ingrese segundo número");
-                            num2 = entrada.nextInt();
-                            result = num1 * num2;
-                            System.out.println("El resultado de la " + operaciones + " es: " + result);
+                            num1 = ingresodato();
+                            num2 = ingresodato();
+                            System.out.println("El resultado de la " + operaciones + " es: " + multiplicacion(num1, num2));
                         } else if (operacionselecionada == 4) {
-                            System.out.println("Ingrese primer número");
-                            double num1 = entrada.nextDouble();
-                            System.out.println("Ingrese primer número");
-                            double num2 = entrada.nextDouble();
-                            double result = num1 / num2;
+                            num1 = ingresodato();
+                            num2 = ingresodato();
                             if (num2 != 0) {
-                                System.out.println("El resultado de la " + operaciones + " es: " + result);
+                                System.out
+                                        .println("El resultado de la " + operaciones + " es: " + division(num1, num2));
                             } else {
                                 System.err.println("¡ERROR! " + operaciones + " entre 0 no permitida.");
                             }
                         }
+                        
                     } else if (opcion.equalsIgnoreCase("N")) {
                         System.out.println("¿Desea cambiar operación?\n[S/N]");
                         opcion = entrada.nextLine();
@@ -175,8 +184,8 @@ public class CalculadoraSimplificada {
                         + "\nSolo se admiten números");
                 entrada.nextLine();
                 primera();
-            }
-
+            }otraoperacion();
+            
         }
     }
 
