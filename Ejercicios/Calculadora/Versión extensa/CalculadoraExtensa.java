@@ -81,14 +81,13 @@ public class CalculadoraExtensa {
                     operaciones = "División";
                     System.out.println("Usted a elegido: " + operaciones + ".");
                 } else if (operacionselecionada == 5) {
-                    System.out.println("Regresando al menú principal");
                     menu();
                     System.exit(5);
                 } else {
                     System.err.println("¡ERROR!\nIngreso no válido intente nuevamente");
                     primera();
                 }
-            } catch (NumberFormatException e) {
+            } catch (InputMismatchException e) {
                 System.err.println("¡ERROR!\nIngreso no válido intente nuevamente." +
                         "\nIngresos válidos números 1 al 5.");
                 primera();
