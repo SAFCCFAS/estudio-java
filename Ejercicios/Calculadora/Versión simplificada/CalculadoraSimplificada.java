@@ -122,9 +122,9 @@ public class CalculadoraSimplificada {
                         System.out.println("Recibido, favor seguir las indicaciones.");
 
                         if (operacionselecionada == 1) {
-                            num1 = ingresodato();
-                            num2 = ingresodato();
-                            System.out.println("El resultado de la "+operaciones+" es: "+suma(num1, num2));
+                            num = ingresodato();
+                            num = ingresodato();
+                            System.out.println("El resultado de la "+operaciones+" es: "+suma(num, num));
                         } else if (operacionselecionada == 2) {
                             System.out.println("Ingrese primer número");
                             num1 = entrada.nextInt();
