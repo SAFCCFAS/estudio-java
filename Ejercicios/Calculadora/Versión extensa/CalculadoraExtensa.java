@@ -358,11 +358,9 @@ public class CalculadoraExtensa {
                                             float num2 = entrada.nextInt();
                                             try {
                                                 float result = num1 / num2;
-                                                System.out.println(
-                                                        "El resultado de la " + operaciones + " es: " + result);
+                                                System.out.println("El resultado de la " + operaciones + " es: " + result);
                                             } catch (ArithmeticException e) {
-                                                System.err
-                                                        .println("¡ERROR! " + operaciones + " por cero no permitida.");
+                                                System.err.println("¡ERROR! " + operaciones + " por cero no permitida.");
                                             }
                                             control = false;
                                             break;
