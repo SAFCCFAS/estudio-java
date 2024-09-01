@@ -47,7 +47,7 @@ public class CalculadoraExtensa {
                 }
                 default -> {
                     System.err.println("¡ERROR!\nIngreso no válido intente nuevamente." +
-                            "\nOpciones válidas 1 al 4.");
+                            "\nOpciones válidas 1 al 5.");
                     menu();
                 }
 
@@ -87,7 +87,7 @@ public class CalculadoraExtensa {
                     System.err.println("¡ERROR!\nIngreso no válido intente nuevamente");
                     primera();
                 }
-            } catch (InputMismatchException e) {
+            } catch (Exception e) {
                 System.err.println("¡ERROR!\nIngreso no válido intente nuevamente." +
                         "\nIngresos válidos números 1 al 5.");
                 primera();
