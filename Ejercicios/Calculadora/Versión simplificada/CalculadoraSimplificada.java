@@ -73,11 +73,11 @@ public class CalculadoraSimplificada {
         opcion = entrada.nextLine();
     }
 
-    static void ingresodato(){
+    static void ingresodato() {
         System.out.println("Favor, ingrese un número");
         num = entrada.nextInt();
     }
-    
+
     static class CalculadoraI {
         void primera() {
             bienvenidacalculadora();
@@ -96,27 +96,29 @@ public class CalculadoraSimplificada {
                     operaciones = "División";
                     System.out.println("Usted a elegido: " + operaciones + ".");
                 } else if (operacionselecionada == 5) {
-                    System.out.println("Regresando al menú principal");
                     menu();
                     System.exit(5);
                 } else {
                     System.err.println("¡ERROR!\nIngreso no válido intente nuevamente");
-                    System.exit(0);
+                    primera();
                 }
-            } catch (NumberFormatException e) {
+            } catch (Exception e) {
                 System.err.println("¡ERROR!\nIngreso no válido intente nuevamente." +
                         "\nIngresos válidos números 1 al 5.");
                 primera();
-                
+                System.exit(0);
             }
             try {
                 for (x = 0; x < 1; x++) {
+
                     confirmacion();
+
                     if (opcion.trim().isEmpty() || opcion.equalsIgnoreCase("S")) {
                         System.out.println("Recibido, favor seguir las indicaciones.");
 
                         if (operacionselecionada == 1) {
-                            ingresodato();
+                            System.out.println("Ingrese primer número");
+                            num1 = entrada.nextInt();
                             System.out.println("Ingrese segundo número");
                             num2 = entrada.nextInt();
                             result = num1 + num2;
@@ -169,6 +171,7 @@ public class CalculadoraSimplificada {
             } catch (InputMismatchException e) {
                 System.err.println("¡ERROR!\nIngreso no válido intente nuevamente"
                         + "\nSolo se admiten números");
+                entrada.nextLine();
                 primera();
             }
 
@@ -244,6 +247,7 @@ public class CalculadoraSimplificada {
                     } catch (Exception e) {
                         System.err.println("¡ERROR!\nIngreso no válido intente nuevamente"
                                 + "\nSolo se admiten números");
+                        entrada.nextLine();
                         segunda();
                     }
                     break;
@@ -274,6 +278,8 @@ public class CalculadoraSimplificada {
             do {
 
                 try {
+
+                    operacionselecionada = Integer.parseInt(operaciones);
 
                     switch (operacionselecionada) {
                         case 1:
@@ -313,7 +319,7 @@ public class CalculadoraSimplificada {
                 }
                 switch (operacionselecionada) {
                     case 1, 2, 3, 4:
-                       confirmacion();
+                        confirmacion();
                         switch (opcion) {
                             case "S", "s":
                                 System.out.println("Seguir las instrucciones");
@@ -366,6 +372,7 @@ public class CalculadoraSimplificada {
                                 } catch (Exception e) {
                                     System.err.println("¡ERROR!\nIngreso no válido intente nuevamente");
                                     System.err.println("Solo se admiten números");
+                                    entrada.nextLine();
                                     control = true;
                                 }
 
@@ -507,6 +514,7 @@ public class CalculadoraSimplificada {
             } catch (Exception e) {
                 System.err.println("¡ERROR!\nIngreso no válido intente nuevamente"
                         + "\nSolo se admiten números");
+                entrada.nextLine();
                 cuarta();
             }
         }
