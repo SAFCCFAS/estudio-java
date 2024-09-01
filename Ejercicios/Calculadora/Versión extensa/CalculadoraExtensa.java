@@ -49,13 +49,14 @@ public class CalculadoraExtensa {
                     System.err.println("¡ERROR!\nIngreso no válido intente nuevamente." +
                             "\nOpciones válidas 1 al 5.");
                     menu();
+                    System.exit(0);
                 }
 
             }
 
         } catch (NumberFormatException e) {
             System.err.println("¡ERROR!\nIngreso no válido intente nuevamente." +
-                    "\nSolo se admiten números (1-4)");
+                    "\nSolo se admiten números (1-5)");
             menu();
         }
     }
@@ -91,6 +92,7 @@ public class CalculadoraExtensa {
                 System.err.println("¡ERROR!\nIngreso no válido intente nuevamente." +
                         "\nIngresos válidos números 1 al 5.");
                 primera();
+                System.exit(0);
             }
             try {
                 for (x = 0; x < 1; x++) {
@@ -156,6 +158,7 @@ public class CalculadoraExtensa {
             } catch (InputMismatchException e) {
                 System.err.println("¡ERROR!\nIngreso no válido intente nuevamente"
                         + "\nSolo se admiten números");
+                entrada.nextLine();
                 primera();
             }
 
@@ -234,6 +237,7 @@ public class CalculadoraExtensa {
                     } catch (Exception e) {
                         System.err.println("¡ERROR!\nIngreso no válido intente nuevamente"
                                 + "\nSolo se admiten números");
+                        entrada.nextLine();
                         segunda();
                     }
                     break;
@@ -360,6 +364,7 @@ public class CalculadoraExtensa {
                                 } catch (Exception e) {
                                     System.err.println("¡ERROR!\nIngreso no válido intente nuevamente");
                                     System.err.println("Solo se admiten números");
+                                    entrada.nextLine();
                                     control = true;
                                 }
 
@@ -503,6 +508,7 @@ public class CalculadoraExtensa {
             } catch (Exception e) {
                 System.err.println("¡ERROR!\nIngreso no válido intente nuevamente"
                         + "\nSolo se admiten números");
+                entrada.nextLine();
                 cuarta();
             }
         }

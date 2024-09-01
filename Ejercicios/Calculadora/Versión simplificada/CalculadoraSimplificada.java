@@ -77,6 +77,7 @@ public class CalculadoraSimplificada {
         System.out.println("Favor, ingrese un número");
         num = entrada.nextInt();
     }
+    
     static class CalculadoraI {
         void primera() {
             bienvenidacalculadora();
@@ -105,7 +106,7 @@ public class CalculadoraSimplificada {
             } catch (NumberFormatException e) {
                 System.err.println("¡ERROR!\nIngreso no válido intente nuevamente." +
                         "\nIngresos válidos números 1 al 5.");
-                
+                primera();
                 
             }
             try {
