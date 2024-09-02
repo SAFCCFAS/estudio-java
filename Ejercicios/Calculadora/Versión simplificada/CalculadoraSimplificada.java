@@ -9,6 +9,7 @@ public class CalculadoraSimplificada {
     static boolean control;
     public static void main(String[] args) {
         menu();
+        otraoperacion();
     }
 
     static void otraoperacion(){
