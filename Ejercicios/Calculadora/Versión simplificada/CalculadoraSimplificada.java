@@ -2,7 +2,7 @@
 import java.util.*;
 
 public class CalculadoraSimplificada {
-
+//test
     static Scanner entrada = new Scanner(System.in);
     static int x, num, num1, num2, result, operacionselecionada;
     static String operaciones, opcion;
