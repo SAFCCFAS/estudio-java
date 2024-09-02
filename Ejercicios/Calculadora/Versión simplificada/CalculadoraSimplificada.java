@@ -14,7 +14,13 @@ public class CalculadoraSimplificada {
 
     static void otraoperacion(){
         System.out.println("¿Desea realiza otra operación?\n[S/N]");
-        opcion = entrada.nextLine();    
+        opcion = entrada.nextLine();
+        if(opcion.equalsIgnoreCase("S")){
+            menu();
+        }else if(opcion.equalsIgnoreCase("N")){
+            System.out.println("Cerrando programa");
+            System.exit(0);
+        }
     }
     
     static void menu() {
@@ -58,7 +64,7 @@ public class CalculadoraSimplificada {
 
         } catch (NumberFormatException e) {
             System.err.println("¡ERROR!\nIngreso no válido intente nuevamente." +
-                    "\nSolo se admiten números (1-4)");
+                    "\nSolo se admiten números (1-5)");
             menu();
         }
     }
@@ -104,23 +110,19 @@ public class CalculadoraSimplificada {
                 operacionselecionada = Integer.parseInt(operaciones);
                 if (operacionselecionada == 1) {
                     operaciones = "Suma";
-                    System.out.println("Usted a elegido: " + operaciones + ".");
                 } else if (operacionselecionada == 2) {
                     operaciones = "Resta";
-                    System.out.println("Usted a elegido: " + operaciones + ".");
                 } else if (operacionselecionada == 3) {
                     operaciones = "Multiplicación";
-                    System.out.println("Usted a elegido: " + operaciones + ".");
                 } else if (operacionselecionada == 4) {
                     operaciones = "División";
-                    System.out.println("Usted a elegido: " + operaciones + ".");
                 } else if (operacionselecionada == 5) {
                     menu();
                     System.exit(5);
                 } else {
-                    System.err.println("¡ERROR!\nIngreso no válido intente nuevamente");
+                    System.err.println("¡ERROR!\nIngreso no válido intente nuevamente.\nOpciones válidas 1 al 5.");
                     primera();
-                }
+                }System.out.println("Usted a elegido: " + operaciones + ".");
             } catch (Exception e) {
                 System.err.println("¡ERROR!\nIngreso no válido intente nuevamente." +
                         "\nIngresos válidos números 1 al 5.");
@@ -287,22 +289,18 @@ public class CalculadoraSimplificada {
                     switch (operacionselecionada) {
                         case 1:
                             operaciones = "Suma";
-                            System.out.println("Usted a escogido: " + operaciones);
                             control = false;
                             break;
                         case 2:
                             operaciones = "Resta";
-                            System.out.println("Usted a escogido: " + operaciones);
                             control = false;
                             break;
                         case 3:
                             operaciones = "Multiplicación";
-                            System.out.println("Usted a escogido: " + operaciones);
                             control = false;
                             break;
                         case 4:
                             operaciones = "División";
-                            System.out.println("Usted a escogido: " + operaciones);
                             control = false;
                             break;
                         case 5:
@@ -313,7 +311,7 @@ public class CalculadoraSimplificada {
                             System.err.println("¡ERROR!\nIngreso no válido intente nuevamente" +
                                     "\nOpciones válidas del 1 al 5");
                             break;
-                    }
+                    }System.out.println("Usted a escogido: " + operaciones);
 
                 } catch (NumberFormatException e) {
                     System.err.println("¡ERROR!\nIngreso no válido intente nuevamente"
@@ -411,19 +409,15 @@ public class CalculadoraSimplificada {
                 switch (operacionselecionada) {
                     case 1:
                         operaciones = "Suma";
-                        System.out.println("Usted a escogido: " + operaciones);
                         break;
                     case 2:
                         operaciones = "Resta";
-                        System.out.println("Usted a escogido: " + operaciones);
                         break;
                     case 3:
                         operaciones = "Multiplicación";
-                        System.out.println("Usted a escogido: " + operaciones);
                         break;
                     case 4:
                         operaciones = "División";
-                        System.out.println("Usted a escogido: " + operaciones);
                         break;
                     case 5:
                         menu();
@@ -433,7 +427,7 @@ public class CalculadoraSimplificada {
                                 "\nOpciones válidas del 1 al 5");
                         cuarta();
                         break;
-                }
+                }System.out.println("Usted a escogido: " + operaciones);
 
             } catch (NumberFormatException e) {
                 System.err.println("¡ERROR!\nIngreso no válido intente nuevamente"
