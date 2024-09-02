@@ -9,9 +9,13 @@ public class CalculadoraSimplificada {
     static boolean control;
     public static void main(String[] args) {
         menu();
-        otraoperacion();
     }
 
+    static void otraoperacion(){
+        System.out.println("¿Desea realiza otra operación?\n[S/N]");
+        opcion = entrada.nextLine();    
+    }
+    
     static void menu() {
 
         System.out.println("Elija la calculadora a usar: \n1-Calculadora for/if-else\n2-Calculadora if/switch");
@@ -43,10 +47,10 @@ public class CalculadoraSimplificada {
                 }
                 case 5 -> {
                     System.out.println("Cerrando programa.");
-                    System.exit(4);
+                    System.exit(5);
                 }
                 default -> {
-                    System.err.println("¡ERROR!\nIngreso no válido intente nuevamente.\nOpciones válidas 1 al 4.");
+                    System.err.println("¡ERROR!\nIngreso no válido intente nuevamente.\nOpciones válidas 1 al 5.");
                     menu();
                 }
             }
@@ -91,11 +95,6 @@ public class CalculadoraSimplificada {
         return a / b;
     }
 
-    static void otraoperacion(){
-        System.out.println("¿Desea realiza otra operación?\n[S/N]");
-        opcion = entrada.nextLine();    
-    } 
-
     static class CalculadoraI {
         void primera() {
             bienvenidacalculadora();
@@ -129,7 +128,6 @@ public class CalculadoraSimplificada {
                 for (x = 0; x < 1; x++) {
 
                     confirmacion();
-
                     if (opcion.trim().isEmpty() || opcion.equalsIgnoreCase("S")) {
                         System.out.println("Recibido, favor seguir las indicaciones.");
                         
@@ -180,8 +178,7 @@ public class CalculadoraSimplificada {
                         + "\nSolo se admiten números");
                 entrada.nextLine();
                 primera();
-            }otraoperacion();
-            
+            }
         }
     }
 
