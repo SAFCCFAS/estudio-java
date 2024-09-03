@@ -35,7 +35,7 @@ public class CalculadoraSimplificada {
                     three.tercera();
                     break;
                 }
-                  case 4 -> {
+                case 4 -> {
                     CalculadoraIV four = new CalculadoraIV();
                     four.cuarta();
                     break;
@@ -75,9 +75,9 @@ public class CalculadoraSimplificada {
     static void confirmacion() {
         System.out.println("¿Desea continuar con la operación " + operaciones + "?\n[S/N]");
         opcion = entrada.nextLine();
-        if(opcion.equalsIgnoreCase("S")){
-            System.out.println("Confimado, seguir las instrucciones de "+operaciones);
-        }else{
+        if (opcion.equalsIgnoreCase("S")) {
+            System.out.println("Confimado, seguir las instrucciones de " + operaciones);
+        } else {
             System.out.println("error");
         }
     }
@@ -130,11 +130,11 @@ public class CalculadoraSimplificada {
                 if (operacionselecionada == 1) {
                     eleccion();
                     confirmacion();
-                    try{
+                    try {
                         num1 = ingresodato();
                         num2 = ingresodato();
-                        System.out.println("El resultado de la " + operaciones + " es: " + suma(num1,num2));
-                    }catch(InputMismatchException e){
+                        System.out.println("El resultado de la " + operaciones + " es: " + suma(num1, num2));
+                    } catch (InputMismatchException e) {
                         System.out.println("Error");
                         primera();
                     }
@@ -154,50 +154,52 @@ public class CalculadoraSimplificada {
                 }
             }
             try {
-              for (x = 0; x < 1; x++) {
-                  confirmacion();
-                  if (opcion.trim().isEmpty() || opcion.equalsIgnoreCase("S")) {
-                      System.out.println("Recibido, favor seguir las indicaciones.");
-                      if (operacionselecionada == 1) {
-                          num1 = ingresodato();
-                          num2 = ingresodato();
-                          System.out.println("El resultado de la " + operaciones + " es: " + suma(num1,num2));
-                      } else if (operacionselecionada == 2) {
-                          num1 = ingresodato();
-                          num2 = ingresodato();
-                          System.out.println("El resultado de la " + operaciones + " es: " + resta(num1, num2));
-                      } else if (operacionselecionada == 3) {
-                          num1 = ingresodato();
-                          num2 = ingresodato();
-                          System.out.println("El resultado de la " + operaciones + " es: " + multiplicacion(num1, num2));
-                      } else if (operacionselecionada == 4) {
-                          num1 = ingresodato();
-                          num2 = ingresodato();
-                          if (num2 != 0) {
-                              System.out.println("El resultado de la " + operaciones + " es: " + division(num1,num2));
-                          } else {
-                              System.err.println("¡ERROR! " + operaciones + " entre 0 no permitida.");
-                          }
-                      }
-                  } else if (opcion.equalsIgnoreCase("N")) {
-                      System.out.println("¿Desea cambiar operación?\n[S/N]");
-                      opcion = entrada.nextLine();
-                      if (opcion.trim().isEmpty() || opcion.equalsIgnoreCase("S")) {
-                          primera();
-                      } else if (opcion.equalsIgnoreCase("N")) {
-                          System.out.println("Cerrando programa.");
-                          System.exit(0);
-                      } else {
-                          System.err.println("¡ERROR!\nIngreso no válido intente nuevamente"
-                                  +"\nOpciones válidas S o N");
-                          primera();
-                      }
-                  } else {
-                      System.err.println("¡ERROR!\nIngreso no válido intente nuevamente" +
-                              "\nOpciones válidas S o N");
-                      primera();
-                  }
-              }
+                for (x = 0; x < 1; x++) {
+                    confirmacion();
+                    if (opcion.trim().isEmpty() || opcion.equalsIgnoreCase("S")) {
+                        System.out.println("Recibido, favor seguir las indicaciones.");
+                        if (operacionselecionada == 1) {
+                            num1 = ingresodato();
+                            num2 = ingresodato();
+                            System.out.println("El resultado de la " + operaciones + " es: " + suma(num1, num2));
+                        } else if (operacionselecionada == 2) {
+                            num1 = ingresodato();
+                            num2 = ingresodato();
+                            System.out.println("El resultado de la " + operaciones + " es: " + resta(num1, num2));
+                        } else if (operacionselecionada == 3) {
+                            num1 = ingresodato();
+                            num2 = ingresodato();
+                            System.out.println(
+                                    "El resultado de la " + operaciones + " es: " + multiplicacion(num1, num2));
+                        } else if (operacionselecionada == 4) {
+                            num1 = ingresodato();
+                            num2 = ingresodato();
+                            if (num2 != 0) {
+                                System.out
+                                        .println("El resultado de la " + operaciones + " es: " + division(num1, num2));
+                            } else {
+                                System.err.println("¡ERROR! " + operaciones + " entre 0 no permitida.");
+                            }
+                        }
+                    } else if (opcion.equalsIgnoreCase("N")) {
+                        System.out.println("¿Desea cambiar operación?\n[S/N]");
+                        opcion = entrada.nextLine();
+                        if (opcion.trim().isEmpty() || opcion.equalsIgnoreCase("S")) {
+                            primera();
+                        } else if (opcion.equalsIgnoreCase("N")) {
+                            System.out.println("Cerrando programa.");
+                            System.exit(0);
+                        } else {
+                            System.err.println("¡ERROR!\nIngreso no válido intente nuevamente"
+                                    + "\nOpciones válidas S o N");
+                            primera();
+                        }
+                    } else {
+                        System.err.println("¡ERROR!\nIngreso no válido intente nuevamente" +
+                                "\nOpciones válidas S o N");
+                        primera();
+                    }
+                }
             } catch (InputMismatchException e) {
                 System.err.println("¡ERROR!\nIngreso no válido intente nuevamente"
                         + "\nSolo se admiten números");
@@ -229,7 +231,8 @@ public class CalculadoraSimplificada {
                         menu();
                         break;
                     default:
-                        System.err.println("¡ERROR!\nIngreso no válido intente nuevamente.\nOpciones válidas del 1 al 5");
+                        System.err
+                                .println("¡ERROR!\nIngreso no válido intente nuevamente.\nOpciones válidas del 1 al 5");
                         segunda();
                 }
                 System.out.println("Usted a elegido " + operaciones + ".");
@@ -240,277 +243,281 @@ public class CalculadoraSimplificada {
             confirmacion();
             switch (opcion) {
                 case "S", "s", "":
-      System.out.println("Seguir instrucciones");
-      try {
-      if (operacionselecionada == 1) {
-      num1 = ingresodato();
-      num2 = ingresodato();
-      System.out.println("El resultado de la " + operaciones + " es: " +suma(num1,
-      num2));
-      break;
-      } else if (operacionselecionada == 2) {
-      num1 = ingresodato();
-      num2 = ingresodato();
-      System.out.println("El resultado de la " + operaciones + " es: " +resta(num1,
-      num2));
-      break;
-      } else if (operacionselecionada == 3) {
-      num1 = ingresodato();
-      num2 = ingresodato();
-      System.out.println("El resultado de la " + operaciones + " es: "
-      +multiplicacion(num1, num2));
-      break;
-      } else if (operacionselecionada == 4) {
-      num1 = ingresodato();
-      num2 = ingresodato();
-      if (num2 != 0) {
-      System.out.println("El resultado de la " + operaciones + " es: "
-      +division(num1, num2));
-     
-      } else {
-      System.err.println("¡ERROR! " + operaciones + " entre 0 no permitida.");
-      }
-      }
-      } catch (Exception e) {
-      System.err.println("¡ERROR!\nIngreso no válido intente nuevamente"
-      + "\nSolo se admiten números");
-      entrada.nextLine();
-      segunda();
-      }
-      break;
-      case "N", "n":
-      System.out.println("1-Cambiar operación\n2-Regresar al menú");
-      opcion = entrada.nextLine();
-      if (opcion.equals("1")) {
-      segunda();
-      } else if (opcion.equals("2")) {
-      menu();
-      } else {
-      System.err.println("¡ERROR!\nIngreso no válido intente nuevamente"
-      + "\nOpciones válidas 1 o 2");
-      }
-      break;
-      default:
-      System.err.println("¡ERROR!\nIngreso no válido intente nuevamente"
-      + "\nOpciones válidas S o N");
-      segunda();
-      }
-      }
-      }
-     
-      static class CalculadoraIII {
-      void tercera() {
-      bienvenidacalculadora();
-      control = true;
-      do {
-     
-      try {
-     
-      operacionselecionada = Integer.parseInt(operaciones);
-     
-      switch (operacionselecionada) {
-      case 1:
-      operaciones = "Suma";
-      control = false;
-      break;
-      case 2:
-      operaciones = "Resta";
-      control = false;
-      break;
-      case 3:
-      operaciones = "Multiplicación";
-      control = false;
-      break;
-      case 4:
-      operaciones = "División";
-      control = false;
-      break;
-      case 5:
-      menu();
-      control = false;
-      break;
-      default:
-      System.err.println("¡ERROR!\nIngreso no válido intente nuevamente" +
-      "\nOpciones válidas del 1 al 5");
-      break;
-      }System.out.println("Usted a escogido: " + operaciones);
-     
-      } catch (NumberFormatException e) {
-      System.err.println("¡ERROR!\nIngreso no válido intente nuevamente"
-      + "\nSolo se admiten números");
-      tercera();
-      }
-      switch (operacionselecionada) {
-      case 1, 2, 3, 4:
-      confirmacion();
-      switch (opcion) {
-      case "S", "s":
-      System.out.println("Seguir las instrucciones");
-      try {
-      switch (operacionselecionada) {
-     
-      case 1:
-      num1 = ingresodato();
-      num2 = ingresodato();
-      System.out.println("El resultado de la " + operaciones + " es: " +suma(num1,
-      num2));
-      control = false;
-      break;
-      case 2:
-      num1 = ingresodato();
-      num2 = ingresodato();
-      System.out.println("El resultado de la " + operaciones + " es: " +resta(num1,
-      num2));
-      control = false;
-      break;
-      case 3:
-      num1 = ingresodato();
-      num2 = ingresodato();
-      System.out.println("El resultado de la " + operaciones + " es: "
-      +multiplicacion(num1, num2));
-      control = false;
-      break;
-      case 4:
-      num1 = ingresodato();
-      num2 = ingresodato();
-      try {
-      System.out.println("El resultado de la " + operaciones + " es: "
-      +division(num1, num2));
-      } catch (ArithmeticException e) {
-      System.err.println("¡ERROR! " + operaciones + " por cero no permitida.");
-      }
-      control = false;
-      break;
-      }
-      } catch (NumberFormatException e) {
-      System.err.println("¡ERROR!\nIngreso no válido intente nuevamente");
-      System.err.println("Solo se admiten números");
-      entrada.nextLine();
-      control = true;
-      }
-     
-      break;
-      case "N", "n":
-     System.out.println("1-Cambio de operación\n2-Regresar al menú");
-     opcion = entrada.nextLine();
-     
-     switch (opcion) {
-     case "1" -> {
-     tercera();
-     break;
-     }
-     case "2" -> {
-     menu();
-     control = false;
-     }
-     default -> {
-     System.err.println("¡ERROR!\nIngreso no válido intente nuevamente" 
+                    System.out.println("Seguir instrucciones");
+                    try {
+                        if (operacionselecionada == 1) {
+                            num1 = ingresodato();
+                            num2 = ingresodato();
+                            System.out.println("El resultado de la " + operaciones + " es: " + suma(num1,
+                                    num2));
+                            break;
+                        } else if (operacionselecionada == 2) {
+                            num1 = ingresodato();
+                            num2 = ingresodato();
+                            System.out.println("El resultado de la " + operaciones + " es: " + resta(num1,
+                                    num2));
+                            break;
+                        } else if (operacionselecionada == 3) {
+                            num1 = ingresodato();
+                            num2 = ingresodato();
+                            System.out.println("El resultado de la " + operaciones + " es: "
+                                    + multiplicacion(num1, num2));
+                            break;
+                        } else if (operacionselecionada == 4) {
+                            num1 = ingresodato();
+                            num2 = ingresodato();
+                            if (num2 != 0) {
+                                System.out.println("El resultado de la " + operaciones + " es: "
+                                        + division(num1, num2));
+
+                            } else {
+                                System.err.println("¡ERROR! " + operaciones + " entre 0 no permitida.");
+                            }
+                        }
+                    } catch (Exception e) {
+                        System.err.println("¡ERROR!\nIngreso no válido intente nuevamente"
+                                + "\nSolo se admiten números");
+                        entrada.nextLine();
+                        segunda();
+                    }
+                    break;
+                case "N", "n":
+                    System.out.println("1-Cambiar operación\n2-Regresar al menú");
+                    opcion = entrada.nextLine();
+                    if (opcion.equals("1")) {
+                        segunda();
+                    } else if (opcion.equals("2")) {
+                        menu();
+                    } else {
+                        System.err.println("¡ERROR!\nIngreso no válido intente nuevamente"
+                                + "\nOpciones válidas 1 o 2");
+                    }
+                    break;
+                default:
+                    System.err.println("¡ERROR!\nIngreso no válido intente nuevamente"
+                            + "\nOpciones válidas S o N");
+                    segunda();
+            }
+        }
+    }
+
+    static class CalculadoraIII {
+        void tercera() {
+            bienvenidacalculadora();
+            control = true;
+            do {
+
+                try {
+
+                    operacionselecionada = Integer.parseInt(operaciones);
+
+                    switch (operacionselecionada) {
+                        case 1:
+                            operaciones = "Suma";
+                            control = false;
+                            break;
+                        case 2:
+                            operaciones = "Resta";
+                            control = false;
+                            break;
+                        case 3:
+                            operaciones = "Multiplicación";
+                            control = false;
+                            break;
+                        case 4:
+                            operaciones = "División";
+                            control = false;
+                            break;
+                        case 5:
+                            menu();
+                            control = false;
+                            break;
+                        default:
+                            System.err.println("¡ERROR!\nIngreso no válido intente nuevamente" +
+                                    "\nOpciones válidas del 1 al 5");
+                            break;
+                    }
+                    System.out.println("Usted a escogido: " + operaciones);
+
+                } catch (NumberFormatException e) {
+                    System.err.println("¡ERROR!\nIngreso no válido intente nuevamente"
+                            + "\nSolo se admiten números");
+                    tercera();
+                }
+                switch (operacionselecionada) {
+                    case 1, 2, 3, 4:
+                        confirmacion();
+                        switch (opcion) {
+                            case "S", "s":
+                                System.out.println("Seguir las instrucciones");
+                                try {
+                                    switch (operacionselecionada) {
+
+                                        case 1:
+                                            num1 = ingresodato();
+                                            num2 = ingresodato();
+                                            System.out
+                                                    .println("El resultado de la " + operaciones + " es: " + suma(num1,
+                                                            num2));
+                                            control = false;
+                                            break;
+                                        case 2:
+                                            num1 = ingresodato();
+                                            num2 = ingresodato();
+                                            System.out
+                                                    .println("El resultado de la " + operaciones + " es: " + resta(num1,
+                                                            num2));
+                                            control = false;
+                                            break;
+                                        case 3:
+                                            num1 = ingresodato();
+                                            num2 = ingresodato();
+                                            System.out.println("El resultado de la " + operaciones + " es: "
+                                                    + multiplicacion(num1, num2));
+                                            control = false;
+                                            break;
+                                        case 4:
+                                            num1 = ingresodato();
+                                            num2 = ingresodato();
+                                            switch(num2){
+                                                case 0 -> System.err.println("¡ERROR! " + operaciones + " por cero no permitida.");
+                                                default ->{
+                                                    System.out.println("El resultado de la " + operaciones + " es: " + result);
+                                                    break;}
+                                            }
+                                            control = false;
+                                            break;
+                                    }
+                                } catch (NumberFormatException e) {
+                                    System.err.println("¡ERROR!\nIngreso no válido intente nuevamente");
+                                    System.err.println("Solo se admiten números");
+                                    entrada.nextLine();
+                                    control = true;
+                                }
+
+                                break;
+                            case "N", "n":
+                                System.out.println("1-Cambio de operación\n2-Regresar al menú");
+                                opcion = entrada.nextLine();
+
+                                switch (opcion) {
+                                    case "1" -> {
+                                        tercera();
+                                        break;
+                                    }
+                                    case "2" -> {
+                                        menu();
+                                        control = false;
+                                    }
+                                    default -> {
+                                        System.err.println("¡ERROR!\nIngreso no válido intente nuevamente"
                                                 + "\nOpciones válidas 1 o 2");
-     control = true;
-     break;
-     }
-     }
-     
-     default: {
-     System.err.println("¡ERROR!\nIngreso no válido intente nuevamente" 
+                                        control = true;
+                                        break;
+                                    }
+                                }
+
+                            default: {
+                                System.err.println("¡ERROR!\nIngreso no válido intente nuevamente"
                                         + "\nOpciones válidas S o N");
-     control = true;
-     break;
-     }
-     }
-     break;
-      }
-     } while (control != false);
-      }
-     
-     }
-     
-     static class CalculadoraIV {
-     void cuarta() {
-     bienvenidacalculadora();
-     try {
-     operacionselecionada = Integer.parseInt(operaciones);
-     
-     switch (operacionselecionada) {
-     case 1:
-     operaciones = "Suma";
-     break;
-     case 2:
-     operaciones = "Resta";
-     break;
-     case 3:
-     operaciones = "Multiplicación";
-     break;
-     case 4:
-     operaciones = "División";
-     break;
-     case 5:
-     menu();
-     break; 
-     default: 
-         System.err.println("¡ERROR!\nIngreso no válido intente nuevamente" + 
+                                control = true;
+                                break;
+                            }
+                        }
+                        break;
+                }
+            } while (control != false);
+        }
+
+    }
+
+    static class CalculadoraIV {
+        void cuarta() {
+            bienvenidacalculadora();
+            try {
+                operacionselecionada = Integer.parseInt(operaciones);
+
+                switch (operacionselecionada) {
+                    case 1:
+                        operaciones = "Suma";
+                        break;
+                    case 2:
+                        operaciones = "Resta";
+                        break;
+                    case 3:
+                        operaciones = "Multiplicación";
+                        break;
+                    case 4:
+                        operaciones = "División";
+                        break;
+                    case 5:
+                        menu();
+                        break;
+                    default:
+                        System.err.println("¡ERROR!\nIngreso no válido intente nuevamente" +
                                 "\nOpciones válidas del 1 al 5");
-     cuarta();
-     break;
-     }System.out.println("Usted a escogido: " + operaciones);
-     
-     } catch (NumberFormatException e) {
-     System.err.println("¡ERROR!\nIngreso no válido intente nuevamente"
-                        +"\nSolo se admiten números");
-     cuarta();
-     }
-     
-     if (operacionselecionada >= 1 && operacionselecionada <= 4) {
-     confirmacion();
-     if (opcion.equalsIgnoreCase("S")) {
-     System.out.println("Seguir instrucciones");
-     } else if (opcion.equalsIgnoreCase("N")) {
-         System.out.println("1-Cambiar operación.\n2-Volver al menú");
-     opcion = entrada.nextLine();
-     switch (opcion) {
-     case "1" -> cuarta();
-     case "2" -> menu();
-     default -> {
-     System.err.println("¡ERROR!\nIngreso no válido intente nuevamente" 
+                        cuarta();
+                        break;
+                }
+                System.out.println("Usted a escogido: " + operaciones);
+
+            } catch (NumberFormatException e) {
+                System.err.println("¡ERROR!\nIngreso no válido intente nuevamente"
+                        + "\nSolo se admiten números");
+                cuarta();
+            }
+
+            if (operacionselecionada >= 1 && operacionselecionada <= 4) {
+                confirmacion();
+                if (opcion.equalsIgnoreCase("S")) {
+                    System.out.println("Seguir instrucciones");
+                } else if (opcion.equalsIgnoreCase("N")) {
+                    System.out.println("1-Cambiar operación.\n2-Volver al menú");
+                    opcion = entrada.nextLine();
+                    switch (opcion) {
+                        case "1" -> cuarta();
+                        case "2" -> menu();
+                        default -> {
+                            System.err.println("¡ERROR!\nIngreso no válido intente nuevamente"
                                     + "\nOpciones válidas 1 o 2");
-     cuarta();
-     }
-     }
-     } else {
-         System.err.println("¡ERROR!\nIngreso no válido intente nuevamente.\nOpciones válidas S o N");
-     cuarta();
-     System.exit(0);
-     }
-     }
-     try {
-     for (x = 0; x < 1; x++) {
-     if (operacionselecionada == 1) {
-     num1 = ingresodato();
-     num2 = ingresodato();
-     System.out.println("El resultado de la " + operaciones + " es: " + suma(num1, num2));
-     } else if (operacionselecionada == 2) {
-     num1 = ingresodato();
-     num2 = ingresodato();
-     System.out.println("El resultado de la " + operaciones + " es: " + resta(num1, num2));
-     } else if (operacionselecionada == 3) {
-     num1 = ingresodato();
-     num2 = ingresodato();
-     System.out.println("El resultado de la " + operaciones + " es: " + multiplicacion(num1, num2));
-     } else if (operacionselecionada == 4) {
-     num1 = ingresodato();
-     num2 = ingresodato();
-     if (num2 != 0) {
-     System.out.println("El resultado de la " + operaciones + " es: " + division(num1, num2));
-     } else {
-     System.err.println("¡ERROR! " + operaciones + " entre 0 no permitida.");
-     }
-     }
-     }
-     } catch (Exception e) {
-     System.err.println("¡ERROR!\nIngreso no válido intente nuevamente.\nSolo se admiten números");
-     entrada.nextLine();
-     cuarta();
-     }
-     }
+                            cuarta();
+                        }
+                    }
+                } else {
+                    System.err.println("¡ERROR!\nIngreso no válido intente nuevamente.\nOpciones válidas S o N");
+                    cuarta();
+                    System.exit(0);
+                }
+            }
+            try {
+                for (x = 0; x < 1; x++) {
+                    if (operacionselecionada == 1) {
+                        num1 = ingresodato();
+                        num2 = ingresodato();
+                        System.out.println("El resultado de la " + operaciones + " es: " + suma(num1, num2));
+                    } else if (operacionselecionada == 2) {
+                        num1 = ingresodato();
+                        num2 = ingresodato();
+                        System.out.println("El resultado de la " + operaciones + " es: " + resta(num1, num2));
+                    } else if (operacionselecionada == 3) {
+                        num1 = ingresodato();
+                        num2 = ingresodato();
+                        System.out.println("El resultado de la " + operaciones + " es: " + multiplicacion(num1, num2));
+                    } else if (operacionselecionada == 4) {
+                        num1 = ingresodato();
+                        num2 = ingresodato();
+                        if (num2 != 0) {
+                            System.out.println("El resultado de la " + operaciones + " es: " + division(num1, num2));
+                        } else {
+                            System.err.println("¡ERROR! " + operaciones + " entre 0 no permitida.");
+                        }
+                    }
+                }
+            } catch (Exception e) {
+                System.err.println("¡ERROR!\nIngreso no válido intente nuevamente.\nSolo se admiten números");
+                entrada.nextLine();
+                cuarta();
+            }
+        }
     }
 }
