@@ -13,9 +13,8 @@ public class CalculadoraExtensa {
 
     static void menu() {
 
-        System.out.println("Elija la calculadora a usar: \n1-Calculadora for/if-else" +
-                "\n2-Calculadora if/switch\n3-Calculadora do-while/switch\n4-Calculadora Switch/if-else/for"
-                + "\n5-Cerrar programa");
+        System.out.println("Favor, elija la calculadora a usar: \n1-for/if-else.\n2-if/switch.\n3-do-while/switch." +
+                "\n4-Switch/if-else/for.\n5-Cerrar programa.");
         operaciones = entrada.nextLine();
 
         try {
