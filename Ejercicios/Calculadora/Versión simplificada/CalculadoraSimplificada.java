@@ -10,7 +10,7 @@ public class CalculadoraSimplificada {
 
     public static void main(String[] args) {
         menu();
-        otraoperacion();
+       // otraoperacion();
     }
 
     static void menu() {
@@ -43,6 +43,7 @@ public class CalculadoraSimplificada {
                 case 5 -> {
                     System.out.println("Cerrando programa.");
                     System.exit(5);
+                    break;
                 }
                 default -> {
                     System.err.println("¡ERROR!\nIngreso no válido intente nuevamente.\nOpciones válidas 1 al 5.");
@@ -52,34 +53,13 @@ public class CalculadoraSimplificada {
         } catch (NumberFormatException e) {
             System.err.println("¡ERROR!\nIngreso no válido intente nuevamente." +
                     "\nSolo se admiten números (1-5)");
-            menu();
+                    textocalculadora();
         }
     }
 
-    static void bienvenidacalculadora() {
-        System.out.println("Favor elija la operación a realizar:\n1-Suma.\n2-Resta.\n3-Multiplicación." +
-                "\n4-División.\n5-Regresar al menú.");
-        operaciones = entrada.nextLine();
-    }
-
-    private static void eleccion() {
-        switch (operaciones) {
-            case "1" -> operaciones = "Suma";
-            case "2" -> operaciones = "Resta";
-            case "3" -> operaciones = "Multiplicación";
-            case "4" -> operaciones = "División";
-        }
-        System.out.println("Usted a elegido " + operaciones);
-    }
-
-    static void confirmacion() {
-        System.out.println("¿Desea continuar con la operación " + operaciones + "?\n[S/N]");
-        opcion = entrada.nextLine();
-        if (opcion.equalsIgnoreCase("S")) {
-            System.out.println("Confimado, seguir las instrucciones de " + operaciones);
-        } else {
-            System.out.println("error");
-        }
+    static void textocalculadora() {
+        System.out.println("Favor elija la operación a realizar:\n1-Suma.\n2-Resta.\n3-Multiplicación.\n4-División.\n5-Regresar al menú.");
+        operaciones = entrada.nextLine();   
     }
 
     static int ingresodato() {
@@ -118,8 +98,8 @@ public class CalculadoraSimplificada {
 
     static class CalculadoraI {
         void primera() {
-            bienvenidacalculadora();
-            for (x = 0; x < 1; x++) {
+            textocalculadora();
+            
                 try {
                     operacionselecionada = Integer.parseInt(operaciones);
                 } catch (InputMismatchException e) {
@@ -128,19 +108,14 @@ public class CalculadoraSimplificada {
                     primera();
                 }
                 if (operacionselecionada == 1) {
-                    eleccion();
-                    confirmacion();
-                    try {
-                        num1 = ingresodato();
-                        num2 = ingresodato();
-                        System.out.println("El resultado de la " + operaciones + " es: " + suma(num1, num2));
-                    } catch (InputMismatchException e) {
-                        System.out.println("Error");
-                        primera();
-                    }
+                    //confirmacion();
+                
+                       /*num1 = ingresodato();
+                        num2 = ingresodato();*/
+                       // System.out.println("El resultado de la " + operaciones + " es: " + suma(num1, num2));
                 } else if (operacionselecionada == 2) {
-                    eleccion();
-                    confirmacion();
+                  //  eleccion();
+                   // confirmacion();
                 } else if (operacionselecionada == 3) {
                     operaciones = "Multiplicación";
                 } else if (operacionselecionada == 4) {
@@ -152,8 +127,8 @@ public class CalculadoraSimplificada {
                     System.err.println("¡ERROR!\nIngreso no válido intente nuevamente.\nOpciones válidas 1 al 5.");
                     primera();
                 }
-            }
-            try {
+            
+            /*try {
                 for (x = 0; x < 1; x++) {
                     confirmacion();
                     if (opcion.trim().isEmpty() || opcion.equalsIgnoreCase("S")) {
@@ -205,13 +180,13 @@ public class CalculadoraSimplificada {
                         + "\nSolo se admiten números");
                 entrada.nextLine();
                 primera();
-            }
+            }*/
         }
     }
 
     static class CalculadoraII {
         void segunda() {
-            bienvenidacalculadora();
+            textocalculadora();
             try {
                 operacionselecionada = Integer.parseInt(operaciones);
                 switch (operacionselecionada) {
@@ -240,7 +215,7 @@ public class CalculadoraSimplificada {
                 System.err.println("¡ERROR!\nIngreso no válido intente nuevamente.\nSolo se admiten números");
                 segunda();
             }
-            confirmacion();
+           // confirmacion();
             switch (opcion) {
                 case "S", "s", "":
                     System.out.println("Seguir instrucciones");
@@ -303,7 +278,7 @@ public class CalculadoraSimplificada {
 
     static class CalculadoraIII {
         void tercera() {
-            bienvenidacalculadora();
+            textocalculadora();
             control = true;
             do {
 
@@ -346,7 +321,7 @@ public class CalculadoraSimplificada {
                 }
                 switch (operacionselecionada) {
                     case 1, 2, 3, 4:
-                        confirmacion();
+                     //   confirmacion();
                         switch (opcion) {
                             case "S", "s":
                                 System.out.println("Seguir las instrucciones");
@@ -433,7 +408,7 @@ public class CalculadoraSimplificada {
 
     static class CalculadoraIV {
         void cuarta() {
-            bienvenidacalculadora();
+            textocalculadora();
             try {
                 operacionselecionada = Integer.parseInt(operaciones);
 
@@ -468,7 +443,7 @@ public class CalculadoraSimplificada {
             }
 
             if (operacionselecionada >= 1 && operacionselecionada <= 4) {
-                confirmacion();
+              //  confirmacion();
                 if (opcion.equalsIgnoreCase("S")) {
                     System.out.println("Seguir instrucciones");
                 } else if (opcion.equalsIgnoreCase("N")) {
