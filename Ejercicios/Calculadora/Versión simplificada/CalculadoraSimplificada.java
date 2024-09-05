@@ -10,7 +10,7 @@ public class CalculadoraSimplificada {
 
     public static void main(String[] args) {
         menu();
-       // otraoperacion();
+        //otraoperacion();
     }
 
     static void menu() {
@@ -69,6 +69,8 @@ public class CalculadoraSimplificada {
         return num;
     }
 
+
+    
     static int suma(int a, int b) {
         return a + b;
     }
