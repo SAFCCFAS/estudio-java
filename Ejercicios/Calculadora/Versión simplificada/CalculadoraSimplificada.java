@@ -114,6 +114,7 @@ public class CalculadoraSimplificada {
 
     static void nombre(){
         System.out.println("Usted a elegido: "+operaciones);
+        System.out.println("¿Desea continuar con: "+operaciones+"?\n[S/N]");
     }
 
     static void ingresonulo(){
@@ -123,30 +124,9 @@ public class CalculadoraSimplificada {
     }
 
     static void confirmacion(){
-        System.out.println("¿Desea continuar con: "+operaciones+"?\n[S/N]");
         opcion = entrada.nextLine();
-        if (opcion.equalsIgnoreCase("S")) {
-            System.out.println("Confimado, seguir las instrucciones de " + operaciones);
-        }else if(opcion.equalsIgnoreCase("N")){
-            System.out.println("¿Desea cambiar operación?\n[S/N]");
-            cambio = entrada.nextLine();
-            switch (cambio) {
-                case "S","s"->
-                    textocalculadora();
-                case "N","n"-> {
-                    System.out.println("Cerrando programa.");
-                    System.exit(0);}
-                default->{
-                    System.err.println("¡ERROR!\nIngreso no válido intente nuevamente.\nOpciones válidas S o N");
-                    confirmacion();
-                }
-            }
-        }else if(opcion.isEmpty()||opcion.trim().isBlank()){
-            ingresonulo();
-            confirmacion();
-        }else {
-            System.err.println("¡ERROR!\nIngreso no válido intente nuevamente.\nOpciones válidas S o N");
-            confirmacion();
+        if(CalculadoraSimplificada.opcion.equalsIgnoreCase("S")){
+            System.out.println("Seguir Las instrucciones");
         }
     }
 
@@ -176,60 +156,6 @@ public class CalculadoraSimplificada {
             System.exit(0);
         }
     }
-
-            /*try {
-                for (x = 0; x < 1; x++) {
-                    confirmacion();
-                    if (opcion.trim().isEmpty() || opcion.equalsIgnoreCase("S")) {
-                        System.out.println("Recibido, favor seguir las indicaciones.");
-                        if (operacionselecionada == 1) {
-                            num1 = ingresodato();
-                            num2 = ingresodato();
-                            System.out.println("El resultado de la " + operaciones + " es: " + suma(num1, num2));
-                        } else if (operacionselecionada == 2) {
-                            num1 = ingresodato();
-                            num2 = ingresodato();
-                            System.out.println("El resultado de la " + operaciones + " es: " + resta(num1, num2));
-                        } else if (operacionselecionada == 3) {
-                            num1 = ingresodato();
-                            num2 = ingresodato();
-                            System.out.println("El resultado de la " + operaciones + " es: " + multiplicacion(num1, num2));
-                        } else if (operacionselecionada == 4) {
-                            num1 = ingresodato();
-                            num2 = ingresodato();
-                            if (num2 != 0) {
-                                System.out.println("El resultado de la " + operaciones + " es: " + division(num1, num2));
-                            } else {
-                                System.err.println("¡ERROR! " + operaciones + " entre 0 no permitida.");
-                            }
-                        }
-                    } else if (opcion.equalsIgnoreCase("N")) {
-                        System.out.println("¿Desea cambiar operación?\n[S/N]");
-                        opcion = entrada.nextLine();
-                        if (opcion.trim().isEmpty() || opcion.equalsIgnoreCase("S")) {
-                            primera();
-                        } else if (opcion.equalsIgnoreCase("N")) {
-                            System.out.println("Cerrando programa.");
-                            System.exit(0);
-                        } else {
-                            System.err.println("¡ERROR!\nIngreso no válido intente nuevamente"
-                                    + "\nOpciones válidas S o N");
-                            primera();
-                        }
-                    } else {
-                        System.err.println("¡ERROR!\nIngreso no válido intente nuevamente" +
-                                "\nOpciones válidas S o N");
-                        primera();
-                    }
-                }
-            } catch (InputMismatchException e) {
-                System.err.println("¡ERROR!\nIngreso no válido intente nuevamente"
-                        + "\nSolo se admiten números");
-                entrada.nextLine();
-                primera();
-            }
-        }
-    }*/
 
     static class CalculadoraII {
         void segunda() {
@@ -539,10 +465,14 @@ public class CalculadoraSimplificada {
     }
 }
 class CalculadoraI {
-        void primera() {
-            CalculadoraSimplificada.textocalculadora();
-            CalculadoraSimplificada.asignarnombre();
-            CalculadoraSimplificada.nombre();
-            CalculadoraSimplificada.confirmacion();
-        }
+void primera() {
+    CalculadoraSimplificada.textocalculadora();
+    CalculadoraSimplificada.asignarnombre();
+    CalculadoraSimplificada.nombre();
+    CalculadoraSimplificada.confirmacion();
+        if(CalculadoraSimplificada.opcion.equalsIgnoreCase("S")){
+        }else if(CalculadoraSimplificada.opcion.equalsIgnoreCase("N")){
+            primera();
+        }   
     }
+}
