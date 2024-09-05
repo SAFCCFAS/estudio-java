@@ -131,9 +131,8 @@ public class CalculadoraSimplificada {
             System.out.println("¿Desea cambiar operación?\n[S/N]");
             cambio = entrada.nextLine();
             switch (cambio) {
-                case "S","s"->{
+                case "S","s"->
                     textocalculadora();
-                    break;}
                 case "N","n"-> {
                     System.out.println("Cerrando programa.");
                     System.exit(0);}
@@ -178,13 +177,6 @@ public class CalculadoraSimplificada {
         }
     }
 
-    static class CalculadoraI {
-        void primera() {
-                textocalculadora();
-                asignarnombre();
-                nombre();
-                confirmacion();
-            
             /*try {
                 for (x = 0; x < 1; x++) {
                     confirmacion();
@@ -235,9 +227,9 @@ public class CalculadoraSimplificada {
                         + "\nSolo se admiten números");
                 entrada.nextLine();
                 primera();
-            }*/
+            }
         }
-    }
+    }*/
 
     static class CalculadoraII {
         void segunda() {
@@ -279,35 +271,29 @@ public class CalculadoraSimplificada {
                         if (operacionselecionada == 1) {
                             num1 = ingresodato();
                             num2 = ingresodato();
-                            System.out.println("El resultado de la " + operaciones + " es: " + suma(num1,
-                                    num2));
+                            System.out.println("El resultado de la " + operaciones + " es: " + suma(num1,num2));
                             break;
                         } else if (operacionselecionada == 2) {
                             num1 = ingresodato();
                             num2 = ingresodato();
-                            System.out.println("El resultado de la " + operaciones + " es: " + resta(num1,
-                                    num2));
+                            System.out.println("El resultado de la " + operaciones + " es: " + resta(num1,num2));
                             break;
                         } else if (operacionselecionada == 3) {
                             num1 = ingresodato();
                             num2 = ingresodato();
-                            System.out.println("El resultado de la " + operaciones + " es: "
-                                    + multiplicacion(num1, num2));
+                            System.out.println("El resultado de la " + operaciones + " es: "+multiplicacion(num1, num2));
                             break;
                         } else if (operacionselecionada == 4) {
                             num1 = ingresodato();
                             num2 = ingresodato();
                             if (num2 != 0) {
-                                System.out.println("El resultado de la " + operaciones + " es: "
-                                        + division(num1, num2));
-
+                                System.out.println("El resultado de la " + operaciones + " es: "+ division(num1, num2));
                             } else {
                                 System.err.println("¡ERROR! " + operaciones + " entre 0 no permitida.");
                             }
                         }
                     } catch (Exception e) {
-                        System.err.println("¡ERROR!\nIngreso no válido intente nuevamente"
-                                + "\nSolo se admiten números");
+                        System.err.println("¡ERROR!\nIngreso no válido intente nuevamente.\nSolo se admiten números");
                         entrada.nextLine();
                         segunda();
                     }
@@ -552,3 +538,11 @@ public class CalculadoraSimplificada {
         }
     }
 }
+class CalculadoraI {
+        void primera() {
+            CalculadoraSimplificada.textocalculadora();
+            CalculadoraSimplificada.asignarnombre();
+            CalculadoraSimplificada.nombre();
+            CalculadoraSimplificada.confirmacion();
+        }
+    }
