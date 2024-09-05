@@ -185,7 +185,6 @@ public class CalculadoraSimplificada {
                 nombre();
                 confirmacion();
             
-            
             /*try {
                 for (x = 0; x < 1; x++) {
                     confirmacion();
