@@ -10,7 +10,7 @@ public class CalculadoraSimplificada {
 
     public static void main(String[] args) {
         menu();
-        //otraoperacion();
+        otraoperacion();
     }
 
     static void menu() {
@@ -143,12 +143,11 @@ public class CalculadoraSimplificada {
                 System.exit(0);}
                 default->{
                 System.err.println("¡ERROR!\nIngreso no válido intente nuevamente.\nOpciones válidas S o N");
-                //confirmacion(llamado);
+                confirmacion(llamado);
                     break;}
             }
         }else{
             System.err.println("¡ERROR!\nIngreso no válido intente nuevamente.\nOpciones válidas S o N");
-            System.exit(0);
             confirmacion(llamado);
         }
     }
@@ -389,7 +388,6 @@ class CalculadoraII {
 
 class CalculadoraIII {
     void tercera() {
-        //int n1,n2;
         CalculadoraSimplificada.textocalculadora();
         CalculadoraSimplificada.asignarnombre();
         CalculadoraSimplificada.nombre();
