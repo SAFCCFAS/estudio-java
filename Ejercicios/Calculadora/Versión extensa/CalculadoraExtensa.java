@@ -6,7 +6,6 @@ public class CalculadoraExtensa {
     static int x, num1, num2, result, operacionselecionada;
     static String operaciones, opcion;
     static boolean control;
-
     public static void main(String[] args) {
         menu();
     }
@@ -47,7 +46,6 @@ public class CalculadoraExtensa {
                     System.err.println("¡ERROR!\nIngreso no válido intente nuevamente.\nOpciones válidas 1 al 5.");
                     menu();
                 }
-
             }
 
         } catch (NumberFormatException e) {
@@ -149,7 +147,6 @@ public class CalculadoraExtensa {
                 entrada.nextLine();
                 primera();
             }
-
         }
     }
 
@@ -384,7 +381,6 @@ public class CalculadoraExtensa {
                 }
             } while (control != false);
         }
-
     }
 
     static class CalculadoraIV {
