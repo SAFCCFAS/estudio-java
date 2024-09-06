@@ -123,7 +123,7 @@ public class CalculadoraSimplificada {
         }
     }
 
-    static void confirmacion(){
+    static void confirmacion(Object llamado){
         opcion = entrada.nextLine();
         if(CalculadoraSimplificada.opcion.equalsIgnoreCase("S")){
             System.out.println("Seguir Las instrucciones");
@@ -464,15 +464,13 @@ public class CalculadoraSimplificada {
         }
     }
 }
+
 class CalculadoraI {
 void primera() {
     CalculadoraSimplificada.textocalculadora();
     CalculadoraSimplificada.asignarnombre();
     CalculadoraSimplificada.nombre();
-    CalculadoraSimplificada.confirmacion();
-        if(CalculadoraSimplificada.opcion.equalsIgnoreCase("S")){
-        }else if(CalculadoraSimplificada.opcion.equalsIgnoreCase("N")){
-            primera();
-        }   
+    CalculadoraSimplificada.confirmacion(this);
+          
     }
 }
