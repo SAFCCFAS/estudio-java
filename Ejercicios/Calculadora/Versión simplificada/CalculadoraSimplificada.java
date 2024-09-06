@@ -125,8 +125,10 @@ public class CalculadoraSimplificada {
 
     static void confirmacion(Object llamado){
         opcion = entrada.nextLine();
-        if(CalculadoraSimplificada.opcion.equalsIgnoreCase("S")){
+        if(opcion.equalsIgnoreCase("S")){
             System.out.println("Seguir Las instrucciones");
+        }else if(opcion.equalsIgnoreCase("N")){
+            System.out.println("Test");
         }
     }
 
