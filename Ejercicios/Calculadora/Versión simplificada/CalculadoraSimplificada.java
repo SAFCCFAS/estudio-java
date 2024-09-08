@@ -45,6 +45,7 @@ public class CalculadoraSimplificada {
             }
         } catch (Exception e) {
             System.err.println("¡ERROR!\nIngreso no válido intente nuevamente.\nSolo se admiten números (1-5)");
+            menu();
         }
     }
 
@@ -137,14 +138,7 @@ public class CalculadoraSimplificada {
                     confirmacion(llamado);
                 }
             }
-        } /*
-           * else{
-           * System.err.
-           * println("¡ERROR!\nIngreso no válido intente nuevamente.\nOpciones válidas S o N"
-           * );
-           * confirmacion(llamado);
-           * }
-           */
+        }
     }
 
     static int suma(int a, int b) {

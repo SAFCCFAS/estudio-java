@@ -11,7 +11,6 @@ public class CalculadoraExtensa {
     }
 
     static void menu() {
-
         System.out.println("Favor, elija la calculadora a usar: \n1-for/if-else.\n2-if/switch.\n3-do-while/switch.\n4-Switch/if-else/for.\n5-Cerrar programa.");
         operaciones = entrada.nextLine();
 
@@ -21,22 +20,18 @@ public class CalculadoraExtensa {
                 case 1 -> {
                     CalculadoraI one = new CalculadoraI();
                     one.primera();
-                    break;
                 }
                 case 2 -> {
                     CalculadoraII two = new CalculadoraII();
                     two.segunda();
-                    break;
                 }
                 case 3 -> {
                     CalculadoraIII three = new CalculadoraIII();
                     three.tercera();
-                    break;
                 }
                 case 4 -> {
                     CalculadoraIV four = new CalculadoraIV();
                     four.cuarta();
-                    break;
                 }
                 case 5 -> {
                     System.out.println("Cerrando programa.");
@@ -157,24 +152,15 @@ public class CalculadoraExtensa {
             try {
                 operacionselecionada = Integer.parseInt(operaciones);
                 switch (operacionselecionada) {
-                    case 1:
-                        operaciones = "Suma";
-                        break;
-                    case 2:
-                        operaciones = "Resta";
-                        break;
-                    case 3:
-                        operaciones = "Multiplicación";
-                        break;
-                    case 4:
-                        operaciones = "División";
-                        break;
-                    case 5:
-                        menu();
-                        break;
-                    default:
+                    case 1 -> operaciones = "Suma";
+                    case 2 -> operaciones = "Resta";
+                    case 3 -> operaciones = "Multiplicación";
+                    case 4 -> operaciones = "División";
+                    case 5 -> menu();
+                    default -> {
                         System.err.println("¡ERROR!\nIngreso no válido intente nuevamente.\nOpciones válidas del 1 al 5");
                         segunda();
+                    }
                 }
                 System.out.println("Usted a elegido " + operaciones + ".");
 
@@ -184,8 +170,8 @@ public class CalculadoraExtensa {
             }
             System.out.println("¿Desea continuar con: " + operaciones + "?\n[S/N]");
             opcion = entrada.nextLine();
-            switch (opcion) {
-                case "S", "s", "":
+            switch (opcion.toUpperCase()) {
+                case "S" -> {
                     System.out.println("Seguir instrucciones");
                     try {
                         if (operacionselecionada == 1) {
@@ -195,7 +181,6 @@ public class CalculadoraExtensa {
                             num2 = entrada.nextInt();
                             result = num1 + num2;
                             System.out.println("El resultado de la " + operaciones + " es: " + result);
-                            break;
                         } else if (operacionselecionada == 2) {
                             System.out.println("Ingrese primer número");
                             num1 = entrada.nextInt();
@@ -203,7 +188,6 @@ public class CalculadoraExtensa {
                             num2 = entrada.nextInt();
                             result = num1 - num2;
                             System.out.println("El resultado de la " + operaciones + " es: " + result);
-                            break;
                         } else if (operacionselecionada == 3) {
                             System.out.println("Ingrese primer número");
                             num1 = entrada.nextInt();
@@ -211,7 +195,6 @@ public class CalculadoraExtensa {
                             num2 = entrada.nextInt();
                             result = num1 * num2;
                             System.out.println("El resultado de la " + operaciones + " es: " + result);
-                            break;
                         } else if (operacionselecionada == 4) {
                             System.out.println("Ingrese primer número");
                             double num1 = entrada.nextDouble();
@@ -229,8 +212,8 @@ public class CalculadoraExtensa {
                         entrada.nextLine();
                         segunda();
                     }
-                    break;
-                case "N", "n":
+                }
+                case "N" -> {
                     System.out.println("1-Cambiar operación\n2-Regresar al menú");
                     opcion = entrada.nextLine();
                     if (opcion.equals("1")) {
@@ -240,10 +223,11 @@ public class CalculadoraExtensa {
                     } else {
                         System.err.println("¡ERROR!\nIngreso no válido intente nuevamente.\nOpciones válidas 1 o 2");
                     }
-                    break;
-                default:
+                }
+                default -> {
                     System.err.println("¡ERROR!\nIngreso no válido intente nuevamente.\nOpciones válidas S o N");
                     segunda();
+                }
             }
         }
     }
@@ -252,40 +236,38 @@ public class CalculadoraExtensa {
         void tercera() {
             control = true;
             do {
-
                 try {
                     System.out.println("Favor elija la operación a realizar:\n1-Suma.\n2-Resta.\n3-Multiplicación.\n4-División.\n5-Regresar al menú.");
                     operaciones = entrada.nextLine();
                     operacionselecionada = Integer.parseInt(operaciones);
 
                     switch (operacionselecionada) {
-                        case 1:
+                        case 1 -> {
                             operaciones = "Suma";
                             System.out.println("Usted a escogido: " + operaciones);
                             control = false;
-                            break;
-                        case 2:
+                        }
+                        case 2 -> {
                             operaciones = "Resta";
                             System.out.println("Usted a escogido: " + operaciones);
                             control = false;
-                            break;
-                        case 3:
+                        }
+                        case 3 -> {
                             operaciones = "Multiplicación";
                             System.out.println("Usted a escogido: " + operaciones);
                             control = false;
-                            break;
-                        case 4:
+                        }
+                        case 4 -> {
                             operaciones = "División";
                             System.out.println("Usted a escogido: " + operaciones);
                             control = false;
-                            break;
-                        case 5:
+                        }
+                        case 5 -> {
                             menu();
                             control = false;
-                            break;
-                        default:
+                        }
+                        default->
                             System.err.println("¡ERROR!\nIngreso no válido intente nuevamente.\nOpciones válidas del 1 al 5");
-                            break;
                     }
 
                 } catch (NumberFormatException e) {
@@ -293,16 +275,16 @@ public class CalculadoraExtensa {
                     tercera();
                 }
                 switch (operacionselecionada) {
-                    case 1, 2, 3, 4:
+                    case 1, 2, 3, 4 -> {
                         System.out.println("¿Desea continuar con " + operaciones + "?\n[S/N]");
                         opcion = entrada.nextLine();
-                        switch (opcion) {
-                            case "S", "s":
+                        switch (opcion.toUpperCase()) {
+                            case "S"-> {
                                 System.out.println("Seguir las instrucciones");
                                 try {
                                     switch (operacionselecionada) {
 
-                                        case 1:
+                                        case 1 -> {
                                             System.out.println("Ingresa primer número");
                                             num1 = entrada.nextInt();
                                             System.out.println("Ingrese segundo número");
@@ -310,8 +292,8 @@ public class CalculadoraExtensa {
                                             result = num1 + num2;
                                             System.out.println("El resultado de la " + operaciones + " es: " + result);
                                             control = false;
-                                            break;
-                                        case 2:
+                                        }
+                                        case 2 -> {
                                             System.out.println("Ingresa primer número");
                                             num1 = entrada.nextInt();
                                             System.out.println("Ingrese segundo número");
@@ -319,8 +301,8 @@ public class CalculadoraExtensa {
                                             result = num1 - num2;
                                             System.out.println("El resultado de la " + operaciones + " es: " + result);
                                             control = false;
-                                            break;
-                                        case 3:
+                                        }
+                                        case 3 -> {
                                             System.out.println("Ingresa primer número");
                                             num1 = entrada.nextInt();
                                             System.out.println("Ingrese segundo número");
@@ -328,8 +310,8 @@ public class CalculadoraExtensa {
                                             result = num1 * num2;
                                             System.out.println("El resultado de la " + operaciones + " es: " + result);
                                             control = false;
-                                            break;
-                                        case 4:
+                                        }
+                                        case 4 -> {
                                             System.out.println("Ingrese el primer número");
                                             float num1 = entrada.nextInt();
                                             System.out.println("Ingrese el segundo número");
@@ -340,7 +322,7 @@ public class CalculadoraExtensa {
                                             } catch (ArithmeticException e) {
                                                 System.err.println("¡ERROR! " + operaciones + " por cero no permitida.");
                                             control = false;
-                                            break;
+                                            }
                                         }
                                     }
                                 } catch (NumberFormatException e) {
@@ -349,16 +331,12 @@ public class CalculadoraExtensa {
                                     entrada.nextLine();
                                     control = true;
                                 }
-
-                                break;
-                            case "N", "n":
+                            }
+                            case "N"-> {
                                 System.out.println("1-Cambio de operación\n2-Regresar al menú");
                                 opcion = entrada.nextLine();
                                 switch (opcion) {
-                                    case "1" -> {
-                                        tercera();
-                                        break;
-                                    }
+                                    case "1" -> tercera();
                                     case "2" -> {
                                         menu();
                                         control = false;
@@ -366,20 +344,18 @@ public class CalculadoraExtensa {
                                     default -> {
                                         System.err.println("¡ERROR!\nIngreso no válido intente nuevamente.\nOpciones válidas 1 o 2");
                                         control = true;
-                                        break;
                                     }
                                 }
-                                break;
-                            default: {
-                                System.err.println("¡ERROR!\nIngreso no válido intente nuevamente"
-                                        + "\nOpciones válidas S o N");
+                            }
+                            default-> {
+                                System.err.println("¡ERROR!\nIngreso no válido intente nuevamente.\nOpciones válidas S o N");
                                 entrada.nextLine();
                                 control = false;
-                                break;
                             }
                         }
+                    }
                 }
-            } while (control != false);
+            } while (control);
         }
     }
 
@@ -391,29 +367,27 @@ public class CalculadoraExtensa {
                 operacionselecionada = Integer.parseInt(operaciones);
 
                 switch (operacionselecionada) {
-                    case 1:
+                    case 1 -> {
                         operaciones = "Suma";
                         System.out.println("Usted a escogido: " + operaciones);
-                        break;
-                    case 2:
+                    }
+                    case 2 -> {
                         operaciones = "Resta";
                         System.out.println("Usted a escogido: " + operaciones);
-                        break;
-                    case 3:
+                    }
+                    case 3 -> {
                         operaciones = "Multiplicación";
                         System.out.println("Usted a escogido: " + operaciones);
-                        break;
-                    case 4:
+                    }
+                    case 4 -> {
                         operaciones = "División";
                         System.out.println("Usted a escogido: " + operaciones);
-                        break;
-                    case 5:
-                        menu();
-                        break;
-                    default:
+                    }
+                    case 5 -> menu();
+                    default -> {
                         System.err.println("¡ERROR!\nIngreso no válido intente nuevamente.\nOpciones válidas del 1 al 5");
                         cuarta();
-                        break;
+                    }
                 }
 
             } catch (NumberFormatException e) {
@@ -432,15 +406,11 @@ public class CalculadoraExtensa {
                     System.out.println("1-Cambiar operación.\n2-Volver al menú");
                     opcion = entrada.nextLine();
                     switch (opcion) {
-                        case "1" -> {
-                            cuarta();
-                            break;
-                        }
+                        case "1" -> cuarta();
                         case "2" -> menu();
                         default -> {
                             System.err.println("¡ERROR!\nIngreso no válido intente nuevamente.\nOpciones válidas 1 o 2");
                             cuarta();
-                            break;
                         }
                     }
                 } else {
