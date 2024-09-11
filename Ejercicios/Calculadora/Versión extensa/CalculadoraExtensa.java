@@ -6,6 +6,7 @@ public class CalculadoraExtensa {
     static int x, num1, num2, result, operacionselecionada;
     static String operaciones, opcion;
     static boolean control;
+
     public static void main(String[] args) {
         menu();
     }
@@ -46,6 +47,7 @@ public class CalculadoraExtensa {
             menu();
         }
     }
+
     static class CalculadoraI {
         void primera() {
             System.out.println("Favor elija la operación a realizar:\n1-Suma.\n2-Resta.\n3-Multiplicación.\n4-División.\n5-Regresar al menú.");
@@ -456,5 +458,4 @@ public class CalculadoraExtensa {
             }
         }
     }
-
 }
