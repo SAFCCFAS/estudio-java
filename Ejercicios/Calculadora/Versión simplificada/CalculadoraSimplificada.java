@@ -136,7 +136,7 @@ public class CalculadoraSimplificada {
                     confirmacion(llamado);
                 }
             }
-        }else {
+        } else {
             System.err.println("¡ERROR!\nIngreso no válido intente nuevamente.\nOpciones válidas S o N");
             confirmacion(llamado);
         }
@@ -263,35 +263,26 @@ class CalculadoraI {
         CalculadoraSimplificada.textocalculadora();
         CalculadoraSimplificada.asignarnombre();
         CalculadoraSimplificada.nombre();
-        CalculadoraSimplificada.confirmacion(this);
-            try {
+
                 for(a=0;a<1;a++){
-                if (CalculadoraSimplificada.operacionselecionada == 1) {
+                    CalculadoraSimplificada.confirmacion(this);
                     n1 = CalculadoraSimplificada.ingresodato();
                     n2 = CalculadoraSimplificada.ingresodato();
+                if (CalculadoraSimplificada.operacionselecionada == 1) {
                     System.out.println("El resultado de la " + CalculadoraSimplificada.operaciones + " es: " + CalculadoraSimplificada.suma(n1, n2) + ".");
                 } else if (CalculadoraSimplificada.operacionselecionada == 2) {
-                    n1 = CalculadoraSimplificada.ingresodato();
-                    n2 = CalculadoraSimplificada.ingresodato();
                     System.out.println("El resultado de la " + CalculadoraSimplificada.operaciones + " es: " + CalculadoraSimplificada.resta(n1, n2) + ".");
                 } else if (CalculadoraSimplificada.operacionselecionada == 3) {
-                    n1 = CalculadoraSimplificada.ingresodato();
-                    n2 = CalculadoraSimplificada.ingresodato();
                     System.out.println("El resultado de la " + CalculadoraSimplificada.operaciones + " es: " + CalculadoraSimplificada.multiplicacion(n1, n2) + ".");
                 } else if (CalculadoraSimplificada.operacionselecionada == 4) {
-                    n1 = CalculadoraSimplificada.ingresodato();
-                    n2 = CalculadoraSimplificada.ingresodato();
                     if (n2 != 0) {
                         System.out.println("El resultado de la " + CalculadoraSimplificada.operaciones + " es: " + CalculadoraSimplificada.division(n1, n2) + ".");
                     } else {
                         System.err.println("¡ERROR! " + CalculadoraSimplificada.operaciones + " entre 0 no permitida.");
                     }
                 }
+                CalculadoraSimplificada.otraoperacion();
             }
-            } catch (InputMismatchException e) {
-                System.err.println("¡ERROR!\nIngreso no válido intente nuevamente.\nSolo se admiten números");
-            }
-
     }
 }
 
@@ -354,6 +345,7 @@ class CalculadoraII {
                     }
                 }
             }
+            CalculadoraSimplificada.otraoperacion();
         }
     }
 }
