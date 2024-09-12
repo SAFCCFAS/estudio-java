@@ -11,8 +11,10 @@ El repositorio está organizado en carpetas, cada una correspondiente a un tema 
     /Calculadora/
         /Versión extensa/
             - CalculadoraExtensa.java
+            - README.md
         /Versión simplificada/
             - CalculadoraSimplicada.java
+            - README.md
 ```
 
 ## Contenido
@@ -38,7 +40,7 @@ El programa presenta un menú principal donde el usuario puede seleccionar una d
 
 ### Versiones de la Calculadora
 
-* **Versión Extensa**: Esta versión incluye el código completo y detallado que emplea diversas estructuras de control para demostrar el uso de condicionales y bucles en Java. Es ideal para aprender y entender cómo funcionan estos conceptos en diferentes contextos.
+* **Versión Extensa**: Esta versión incluye el código completo y detallado que emplea diversas estructuras de control para demostrar el uso de condicionales y bucles en Java. Es ideal para aprender y entender cómo funcionan estos conceptos en diferentes contextos, tambien que ayuda a reforzar el conocimientos sobre las variables y sus tipos, así como tambien las asignaciones de las mismas.
 
 * **Versión Simplificada**: Esta versión está diseñada para ser más compacta y clara, enfocándose en una implementación más directa y eficiente del mismo problema. Es útil para quienes ya están familiarizados con los conceptos y buscan un código más limpio y menos detallado.
 
