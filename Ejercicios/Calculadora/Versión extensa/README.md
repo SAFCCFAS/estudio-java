@@ -1,6 +1,7 @@
 # Calculadora Extensa
 
-Este proyecto implementa una calculadora en Java con diferentes métodos de control de flujo para realizar operaciones aritméticas básicas. La aplicación permite al usuario seleccionar entre varias versiones de la calculadora, cada una utilizando un enfoque diferente para la lógica de control.
+**Calculadora Extensa** es una implementación dentro del proyecto general de Calculadora en Java. Este programa explora detalladamente diferentes estructuras de control (`for`, `if`-`else`, `switch`, `do`-`while`) a través de cuatro (4) versiones de una calculadora. Cada versión está diseñada para demostrar cómo estas estructuras pueden ser utilizadas para manejar operaciones aritméticas básicas y proporcionar una comprensión más profunda de la programación en Java.
+
 
 ## Índice
 
@@ -19,10 +20,10 @@ La calculadora extensa ofrece cuatro versiones diferentes de calculadoras, cada 
 ## Uso
 
 Al ejecutar el programa, se muestra un menú que permite al usuario seleccionar una de las siguientes opciones:
-1. **Calculadora for/if-else**
-2. **Calculadora if/switch**
-3. **Calculadora do-while/switch**
-4. **Calculadora Switch/if-else/for**
+1. **for/if-else**
+2. **if/switch**
+3. **do-while/switch**
+4. **Switch/if-else/for**
 5. **Cerrar programa**
 
 Cada opción lleva al usuario a una calculadora específica donde puede realizar operaciones aritméticas básicas: Suma, Resta, Multiplicación, y División.
