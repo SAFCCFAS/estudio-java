@@ -29,7 +29,7 @@ Hasta ahora, he cubierto los siguientes temas en Java:
 
 Voy a seguir añadiendo más ejercicios y temas a medida que avance en mi aprendizaje.
 
-## Descripción
+## Descripción Calculadora
 
 El programa presenta un menú principal donde el usuario puede seleccionar una de las cuatro calculadoras, cada una
 implementada con diferentes estructuras de control. Tras seleccionar una calculadora, se le pide al usuario que elija la
@@ -47,8 +47,8 @@ seleccionada y muestra el resultado en pantalla.
 
 - **Versión Extensa**: Esta versión incluye el código completo y detallado que emplea diversas estructuras de control
 para demostrar el uso de condicionales y bucles en Java. Es ideal para aprender y entender cómo funcionan estos
-conceptos en diferentes contextos, tambien que ayuda a reforzar el conocimientos sobre las variables y sus tipos, así
-como tambien las asignaciones de las mismas.
+conceptos en diferentes contextos, también que ayuda a reforzar el conocimiento sobre las variables y sus tipos, así
+como también las asignaciones de las mismas.
 
 
 - **Versión Simplificada**: Esta versión está diseñada para ser más compacta y clara, enfocándose en una implementación
@@ -65,7 +65,7 @@ las operaciones específicas.
 
 - **Operaciones Básicas**: Suma, resta, multiplicación y división.
 - **Navegación**: Posibilidad de volver al menú principal o cambiar de operación.
-- **Validación de Entradas**: Se valida que las entradas sean números y se manejan las excepciones adecuadamente.
+- **Validación de Entradas**: Se válida que las entradas sean números y se manejan las excepciones adecuadamente.
 
 ## Manejo de Excepciones
 
