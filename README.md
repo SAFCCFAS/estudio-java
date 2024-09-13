@@ -90,7 +90,7 @@ Si quieres revisar o ejecutar los ejercicios, sigue estos pasos:
    ```
    
    o
-2. 
+
    ```bash
    gh repo clone SAFCCFAS/estudio-java
    ```
