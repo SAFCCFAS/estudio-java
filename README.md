@@ -45,18 +45,21 @@ seleccionada y muestra el resultado en pantalla.
 
 ### Versiones de la Calculadora
 
-* **Versión Extensa**: Esta versión incluye el código completo y detallado que emplea diversas estructuras de control
+- **Versión Extensa**: Esta versión incluye el código completo y detallado que emplea diversas estructuras de control
 para demostrar el uso de condicionales y bucles en Java. Es ideal para aprender y entender cómo funcionan estos
 conceptos en diferentes contextos, tambien que ayuda a reforzar el conocimientos sobre las variables y sus tipos, así
 como tambien las asignaciones de las mismas.
 
 
-* **Versión Simplificada**: Esta versión está diseñada para ser más compacta y clara, enfocándose en una implementación más directa y eficiente del mismo problema. Es útil para quienes ya están familiarizados con los conceptos y buscan un código más limpio y menos detallado.
+- **Versión Simplificada**: Esta versión está diseñada para ser más compacta y clara, enfocándose en una implementación
+más directa y eficiente del mismo problema. Es útil para quienes ya están familiarizados con los conceptos y buscan un
+código más limpio y menos detallado.
 
 ### Estructura del Proyecto
 
 - **Main Class**: Contiene el menú principal y llama a las diferentes clases según la elección del usuario.
-- **Sub Clases**: Cada calculadora tiene su propia clase (`CalculadoraI`, `CalculadoraII`, etc.) donde se implementan las operaciones específicas.
+- **Sub Clases**: Cada calculadora tiene su propia clase (`CalculadoraI`, `CalculadoraII`, etc.) donde se implementan
+las operaciones específicas.
 
 ## Funcionalidades
 
@@ -66,11 +69,14 @@ como tambien las asignaciones de las mismas.
 
 ## Manejo de Excepciones
 
-El proyecto implementa manejo de excepciones para asegurar la estabilidad del programa frente a entradas no válidas y otros errores comunes.
+El proyecto implementa manejo de excepciones para asegurar la estabilidad del programa frente a entradas no válidas y
+otros errores comunes.
 
 ### Excepciones Manejadas:
-- **NumberFormatException**: Capturada cuando el usuario ingresa un valor no numérico en lugar de un número, como cuando se espera un entero pero se proporciona texto.
-- **Exception**: Captura cualquier otro tipo de error no específico que pueda ocurrir durante la ejecución, asegurando que el programa maneje adecuadamente situaciones inesperadas.
+- **NumberFormatException**: Capturada cuando el usuario ingresa un valor no numérico en lugar de un número, como cuando
+se espera un entero pero se proporciona texto.
+- **Exception**: Captura cualquier otro tipo de error no específico que pueda ocurrir durante la ejecución, asegurando
+que el programa maneje adecuadamente situaciones inesperadas.
 
 
 ## Cómo Usar Este Repositorio
@@ -82,35 +88,42 @@ Si quieres revisar o ejecutar los ejercicios, sigue estos pasos:
    ```bash
    git clone https://github.com/SAFCCFAS/estudio-java.git
    ```
-
    o
-
    ```bash
    gh repo clone SAFCCFAS/estudio-java
    ```
 
 2. Abre los archivos `.java` en tu editor de código preferido.
-3. Ejecuta los ejercicios utilizando el entorno de desarrollo que prefieras (Eclipse, IntelliJ, etc.) o directamente desde la línea de comandos usando `javac` y `java`.
+3. Ejecuta los ejercicios utilizando el entorno de desarrollo que prefieras (Eclipse, IntelliJ, etc.) o directamente
+desde la línea de comandos usando `javac` y `java`.
 
 ## Progreso y Objetivos
 
-Hasta ahora, he logrado familiarizarme con los conceptos básicos de Java, como variables, condicionales y bucles. Mi próximo objetivo es profundizar en la programación orientada a objetos, y luego empezar a trabajar en proyectos más complejos.
+Hasta ahora, he logrado familiarizarme con los conceptos básicos de Java, como variables, condicionales y bucles.
+Mi próximo objetivo es profundizar en la programación orientada a objetos, y luego empezar a trabajar en proyectos más
+complejos.
 
 ## Plan de Mejora
 
-Actualmente, el código que encontrarás en este repositorio está en una **versión extendida**, lo que significa que es más detallado y explícito para facilitar mi comprensión y aprendizaje de los conceptos. Sin embargo, a medida que avance en mis estudios y me sienta más cómodo con Java, tengo planeado **refactorizar** y **simplificar** el código para hacerlo más limpio y eficiente.
+Actualmente, el código que encontrarás en este repositorio está en una **versión extendida**, lo que significa que es
+más detallado y explícito para facilitar mi comprensión y aprendizaje de los conceptos. Sin embargo, a medida que avance
+en mis estudios y me sienta más cómodo con Java, tengo planeado **refactorizar** y **simplificar** el código para
+hacerlo más limpio y eficiente.
 
 Algunas de las mejoras futuras incluirán:
 
 - **Modularización del código**: Separar responsabilidades en métodos y clases para mejorar la mantenibilidad.
-- **Uso de buenas prácticas**: Implementar principios de diseño como DRY (Don't Repeat Yourself) y KISS (Keep It Simple, Stupid).
+- **Uso de buenas prácticas**: Implementar principios de diseño como DRY (Don't Repeat Yourself) y KISS (Keep It Simple,
+Stupid).
 - **Optimización de lógica**: Simplificar estructuras condicionales y bucles.
 
 Si tienes sugerencias o ideas para mejorar el código, ¡serán bienvenidas!
 
 ## Notas Personales
 
-Aprender Java de forma independiente ha sido un desafío interesante, especialmente al principio. Estoy usando este repositorio como un diario de aprendizaje, donde documento lo que aprendo y cómo lo aplico. Si tienes alguna sugerencia o comentario, ¡estaré encantado de recibir tu feedback!
+Aprender Java de forma independiente ha sido un desafío interesante, especialmente al principio. Estoy usando este
+repositorio como un diario de aprendizaje, donde documento lo que aprendo y cómo lo aplico. Si tienes alguna sugerencia
+o comentario, ¡estaré encantado de recibir tu feedback!
 
 ## Recursos Adicionales
 
@@ -124,6 +137,7 @@ Que me ha ayudado en este camino:
 
 ## Licencia
 
-Este proyecto está bajo la Licencia MIT, lo que significa que puedes utilizar y modificar el código libremente. Sin embargo, ten en cuenta que este código es principalmente para fines educativos.
+Este proyecto está bajo la Licencia MIT, lo que significa que puedes utilizar y modificar el código libremente.
+Sin embargo, ten en cuenta que este código es principalmente para fines educativos.
 
 ---
