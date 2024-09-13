@@ -1,10 +1,12 @@
 # Estudio Java
 
-¡Bienvenido a mi repositorio de ejercicios de programación en Java! Soy un estudiante principiante aprendiendo Java por mi cuenta, y este repositorio es donde subo los ejercicios y proyectos que realizo para mejorar mis habilidades.
+¡Bienvenido a mi repositorio de ejercicios de programación en Java! Soy un estudiante principiante aprendiendo Java por 
+mi cuenta, y este repositorio es donde subo los ejercicios y proyectos que realizo para mejorar mis habilidades.
 
 ## Estructura del Repositorio
 
-El repositorio está organizado en carpetas, cada una correspondiente a un tema o concepto de Java que estoy estudiando. Aquí te dejo una descripción general de la estructura:
+El repositorio está organizado en carpetas, cada una correspondiente a un tema o concepto de Java que estoy estudiando.
+Aquí te dejo una descripción general de la estructura:
 
 ```
 /Ejercicios/
@@ -29,7 +31,10 @@ Voy a seguir añadiendo más ejercicios y temas a medida que avance en mi aprend
 
 ## Descripción
 
-El programa presenta un menú principal donde el usuario puede seleccionar una de las cuatro calculadoras, cada una implementada con diferentes estructuras de control. Tras seleccionar una calculadora, se le pide al usuario que elija la operación matemática a realizar y que introduzca los números correspondientes. La calculadora realiza la operación seleccionada y muestra el resultado en pantalla.
+El programa presenta un menú principal donde el usuario puede seleccionar una de las cuatro calculadoras, cada una
+implementada con diferentes estructuras de control. Tras seleccionar una calculadora, se le pide al usuario que elija la
+operación matemática a realizar y que introduzca los números correspondientes. La calculadora realiza la operación
+seleccionada y muestra el resultado en pantalla.
 
 ### Modos de Implementación
 
@@ -40,7 +45,11 @@ El programa presenta un menú principal donde el usuario puede seleccionar una d
 
 ### Versiones de la Calculadora
 
-* **Versión Extensa**: Esta versión incluye el código completo y detallado que emplea diversas estructuras de control para demostrar el uso de condicionales y bucles en Java. Es ideal para aprender y entender cómo funcionan estos conceptos en diferentes contextos, tambien que ayuda a reforzar el conocimientos sobre las variables y sus tipos, así como tambien las asignaciones de las mismas.
+* **Versión Extensa**: Esta versión incluye el código completo y detallado que emplea diversas estructuras de control
+para demostrar el uso de condicionales y bucles en Java. Es ideal para aprender y entender cómo funcionan estos
+conceptos en diferentes contextos, tambien que ayuda a reforzar el conocimientos sobre las variables y sus tipos, así
+como tambien las asignaciones de las mismas.
+
 
 * **Versión Simplificada**: Esta versión está diseñada para ser más compacta y clara, enfocándose en una implementación más directa y eficiente del mismo problema. Es útil para quienes ya están familiarizados con los conceptos y buscan un código más limpio y menos detallado.
 
