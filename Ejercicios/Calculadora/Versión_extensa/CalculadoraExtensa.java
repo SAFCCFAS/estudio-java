@@ -1,3 +1,5 @@
+package Ejercicios.Calculadora.Versión_extensa;
+
 import java.util.*;
 
 public class CalculadoraExtensa {
