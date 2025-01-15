@@ -1,6 +1,6 @@
 package Ejercicios.Calculadora.Versión_simplificada;
 
-import java.util.*;
+import java.util.Scanner;
 
 public class CalculadoraSimplificada {
 
