@@ -1,4 +1,4 @@
- 
+package Ejercicios.Calculadora.Versión_simplificada;
 
 import java.util.*;
 
@@ -14,8 +14,8 @@ public class CalculadoraSimplificada {
     }
 
     static void menu() {
-        System.out.println("Elija la calculadora a usar:\n1-for/if-else.\n2-if/switch.\n3-do-while/switch" +
-                "\n4-Switch/if-else/for\n5-Cerrar programa");
+        System.out.println("Elija la calculadora a usar:\n1-for/if-else.\n2-if/switch.\n3-do-while/switch"
+                + "\n4-Switch/if-else/for\n5-Cerrar programa");
         operaciones = entrada.nextLine();
         try {
             operacionselecionada = Integer.parseInt(operaciones);
@@ -52,8 +52,8 @@ public class CalculadoraSimplificada {
     }
 
     static void textocalculadora() {
-            System.out.println("Favor elija la operación a realizar:\n1-Suma.\n2-Resta.\n3-Multiplicación.\n4-División.\n5-Regresar al menú.");
-            operaciones = entrada.nextLine();
+        System.out.println("Favor elija la operación a realizar:\n1-Suma.\n2-Resta.\n3-Multiplicación.\n4-División.\n5-Regresar al menú.");
+        operaciones = entrada.nextLine();
     }
 
     static int ingresodato() {
@@ -89,7 +89,8 @@ public class CalculadoraSimplificada {
                         operaciones = "División";
                         control = false;
                     }
-                    case 5 -> menu();
+                    case 5 ->
+                        menu();
                     default -> {
                         System.err.println("¡ERROR!\nIngreso no válido intente nuevamente.\nOpciones válidas del 1 al 5");
                         textocalculadora();
@@ -171,12 +172,13 @@ public class CalculadoraSimplificada {
 }
 
 class CalculadoraI {
+
     void primera() {
         int n1, n2, a;
         CalculadoraSimplificada.textocalculadora();
         CalculadoraSimplificada.asignarnombre();
         CalculadoraSimplificada.nombre();
-        for(a=0;a<1;a++){
+        for (a = 0; a < 1; a++) {
             CalculadoraSimplificada.confirmacion(this);
             n1 = CalculadoraSimplificada.ingresodato();
             n2 = CalculadoraSimplificada.ingresodato();
@@ -203,6 +205,7 @@ class CalculadoraI {
 }
 
 class CalculadoraII {
+
     void segunda() {
         int n1, n2;
         CalculadoraSimplificada.textocalculadora();
@@ -213,19 +216,22 @@ class CalculadoraII {
             n1 = CalculadoraSimplificada.ingresodato();
             n2 = CalculadoraSimplificada.ingresodato();
             switch (CalculadoraSimplificada.operacionselecionada) {
-                case 1 -> System.out.println("El resultado de la " + CalculadoraSimplificada.operaciones + " es: "
-                        + CalculadoraSimplificada.suma(n1, n2) + ".");
-                case 2 -> System.out.println("El resultado de la " + CalculadoraSimplificada.operaciones + " es: "
-                        + CalculadoraSimplificada.resta(n1, n2) + ".");
-                case 3 -> System.out.println("El resultado de la " + CalculadoraSimplificada.operaciones + " es: "
-                        + CalculadoraSimplificada.multiplicacion(n1, n2) + ".");
+                case 1 ->
+                    System.out.println("El resultado de la " + CalculadoraSimplificada.operaciones + " es: "
+                            + CalculadoraSimplificada.suma(n1, n2) + ".");
+                case 2 ->
+                    System.out.println("El resultado de la " + CalculadoraSimplificada.operaciones + " es: "
+                            + CalculadoraSimplificada.resta(n1, n2) + ".");
+                case 3 ->
+                    System.out.println("El resultado de la " + CalculadoraSimplificada.operaciones + " es: "
+                            + CalculadoraSimplificada.multiplicacion(n1, n2) + ".");
                 case 4 -> {
                     if (n2 != 0) {
                         System.out.println("El resultado de la " + CalculadoraSimplificada.operaciones + " es: "
                                 + CalculadoraSimplificada.division(n1, n2) + ".");
                     } else {
                         System.err.println("¡ERROR! " + CalculadoraSimplificada.operaciones + " por cero no permitida.");
-                        }
+                    }
                 }
             }
             CalculadoraSimplificada.otraoperacion();
@@ -234,61 +240,68 @@ class CalculadoraII {
 }
 
 class CalculadoraIII {
+
     void tercera() {
-        int n1,n2;
+        int n1, n2;
         boolean control = true;
-        do{
+        do {
             CalculadoraSimplificada.textocalculadora();
             CalculadoraSimplificada.asignarnombre();
             CalculadoraSimplificada.nombre();
-            switch (CalculadoraSimplificada.operacionselecionada){
+            switch (CalculadoraSimplificada.operacionselecionada) {
                 case 1, 2, 3, 4 -> {
                     CalculadoraSimplificada.confirmacion(this);
                     n1 = CalculadoraSimplificada.ingresodato();
                     n2 = CalculadoraSimplificada.ingresodato();
-                    switch (CalculadoraSimplificada.operacionselecionada){
-                        case 1-> System.out.println("El resultado de la " + CalculadoraSimplificada.operaciones + " es: "
-                                + CalculadoraSimplificada.suma(n1, n2) + ".");
-                        case 2 -> System.out.println("El resultado de la " + CalculadoraSimplificada.operaciones + " es: "
-                                + CalculadoraSimplificada.resta(n1, n2) + ".");
-                        case 3 -> System.out.println("El resultado de la " + CalculadoraSimplificada.operaciones + " es: "
-                                + CalculadoraSimplificada.multiplicacion(n1, n2) + ".");
+                    switch (CalculadoraSimplificada.operacionselecionada) {
+                        case 1 ->
+                            System.out.println("El resultado de la " + CalculadoraSimplificada.operaciones + " es: "
+                                    + CalculadoraSimplificada.suma(n1, n2) + ".");
+                        case 2 ->
+                            System.out.println("El resultado de la " + CalculadoraSimplificada.operaciones + " es: "
+                                    + CalculadoraSimplificada.resta(n1, n2) + ".");
+                        case 3 ->
+                            System.out.println("El resultado de la " + CalculadoraSimplificada.operaciones + " es: "
+                                    + CalculadoraSimplificada.multiplicacion(n1, n2) + ".");
                         case 4 -> {
                             switch (n2) {
-                                case 0 -> System.err.println("¡ERROR! " + CalculadoraSimplificada.operaciones
-                                        + " por cero no permitida.");
-                                default -> System.out.println("El resultado de la " + CalculadoraSimplificada.operaciones
-                                        + " es: " + CalculadoraSimplificada.division(n1, n2)+".");
+                                case 0 ->
+                                    System.err.println("¡ERROR! " + CalculadoraSimplificada.operaciones
+                                            + " por cero no permitida.");
+                                default ->
+                                    System.out.println("El resultado de la " + CalculadoraSimplificada.operaciones
+                                            + " es: " + CalculadoraSimplificada.division(n1, n2) + ".");
                             }
                         }
                     }
-                    control=false;
+                    control = false;
                 }
             }
-        }while(control);
+        } while (control);
         CalculadoraSimplificada.otraoperacion();
     }
 }
 
 class CalculadoraIV {
+
     void cuarta() {
-        int x, n1,n2;
+        int x, n1, n2;
         CalculadoraSimplificada.textocalculadora();
         CalculadoraSimplificada.asignarnombre();
         CalculadoraSimplificada.nombre();
 
-        switch (CalculadoraSimplificada.operacionselecionada){
-            case 1, 2, 3, 4->{
+        switch (CalculadoraSimplificada.operacionselecionada) {
+            case 1, 2, 3, 4 -> {
                 CalculadoraSimplificada.confirmacion(this);
                 for (x = 0; x < 1; x++) {
                     n1 = CalculadoraSimplificada.ingresodato();
                     n2 = CalculadoraSimplificada.ingresodato();
                     if (CalculadoraSimplificada.operacionselecionada == 1) {
                         System.out.println("El resultado de la " + CalculadoraSimplificada.operaciones + " es: "
-                                + CalculadoraSimplificada.suma(n1,n2));
+                                + CalculadoraSimplificada.suma(n1, n2));
                     } else if (CalculadoraSimplificada.operacionselecionada == 2) {
                         System.out.println("El resultado de la " + CalculadoraSimplificada.operaciones + " es: "
-                                + CalculadoraSimplificada.resta(n1,n2));
+                                + CalculadoraSimplificada.resta(n1, n2));
                     } else if (CalculadoraSimplificada.operacionselecionada == 3) {
                         System.out.println("El resultado de la " + CalculadoraSimplificada.operaciones + " es: "
                                 + CalculadoraSimplificada.multiplicacion(n1, n2));
